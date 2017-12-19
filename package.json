@@ -1,0 +1,24 @@
+{
+  "name": "project-3",
+  "version": "1.0.0",
+  "description": "RESTful React/Express App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.generalassemb.ly:group2hot2handle/project-3.git"
+  },
+  "keywords": [],
+  "author": "group2hot2handle",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.13.3",
+    "pg-promise": "^7.3.2"
+  }
+}
