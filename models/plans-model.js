@@ -2,6 +2,8 @@ const db = require('../config/dbConfig');
 
 const Plan = {};
 
+//need to verify whether we need a validator here
+
 Plan.findAll = () => {
   return db.many('SELECT * FROM plans');
 };
