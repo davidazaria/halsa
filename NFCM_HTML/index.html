@@ -8,11 +8,19 @@
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <link rel="stylesheet" href="./style.css">
     <title>Halsa</title>
+    <script>
+    function init() {
+  let d = document.getElementId('root')[0];
+  d.Id = d.Id + " col-animate";
+}
+    </script>
   </head>
-  <body>
+  <body class= "landing">
     <div id="root">
-      <h1>Halsa</h1>
-      <a href='./form.html'><h2>Get Quote</h2>
+      <div class= "logo1" >
+       <img src="image/halsalogo.png" alt="Mountain View">
+      </div>
+      <a href='./form.html'><h2 class= "quote">Get Quote</h2>
     </div>
   </body>
 </html>
