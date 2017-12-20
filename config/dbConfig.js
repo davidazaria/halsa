@@ -1,5 +1,23 @@
-module.exports = process.env.DATABASE_URL || {
-  host:     process.env.DB_HOST || 'localhost',
-  port:     process.env.DB_PORT || 5432,
-  database: process.env.DB_NAME || 'halsa_health',
+const options = {
+  query: (e) => {
+    console.log(e.query);
+  },
 };
+
+const pgp = require('pg-promise')(options);
+
+function setDatabase() {
+  if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
+    return pgp({
+      host: 'localhost',
+      database: 'halsa_health',
+      port: 5432,
+    });
+  } else if (process.env.NODE_ENV === 'production') {
+    return pgp(process.env.DATABASE_URL);
+  }
+}
+
+const db = setDatabase();
+
+module.exports = db;
