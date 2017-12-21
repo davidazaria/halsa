@@ -19,8 +19,10 @@ const plansRoutes = require('./routes/plans-routes');
 
 app.use('/api/plans', plansRoutes);
 
-// const usersRoutes = require('./routes/users-routes');
-// app.use('/api/users', usersRoutes);
+
+const usersRoutes = require('./routes/users-routes');
+
+app.use('/api/users', usersRoutes);
 
 app.use('*', (req, res) => {
   res.status(404).send('Not Found');
