@@ -7,7 +7,7 @@
 
  }
  .landing{
-  background-color: grey;
+  background-color: white;
  }
 /* .root{
   background-color: white;
@@ -24,16 +24,35 @@ input{
     margin: 30px;
     border-radius: 8px;
     width: 300px;
+    font-size: 35px;
 
 
 }
 
+.userform{
+   position: absolute;
+   margin-top: 50px;
+   padding-left: 55px;
+   left: -1000px;
+   -webkit-animation: slide 0.5s forwards;
+    -webkit-animation-delay: .1s;
+    animation: slide 0.5s forwards;
+    animation-delay: .1s;
+}
+@-webkit-keyframes slide {
+    100% { left: 0; }
+}
+
+@keyframes slide {
+    100% { left: 0; }
+}
+
 .userflow label {
   display: inline-block;
-  width: 300px;
   text-align: right;
   color:white;
   font-size: 75px;
+
 }​
 
  .userbox {
@@ -53,6 +72,30 @@ input{
 
   }
 
+a {
+
+  font-size:65px;
+  color:white;
+  position:absolute;
+  padding-right: 55px;
+  bottom: 5%;
+   right: -1000px;
+   -webkit-animation: slide-in 0.7s forwards;
+    -webkit-animation-delay: .1s;
+    animation: slide-in .7s forwards;
+    animation-delay: .1s;
+}
+@-webkit-keyframes slide-in {
+    100% { right: 0px; }
+}
+
+@keyframes slide-in {
+    100% { right: 0px; }
+}
+
+
+
+
 h1 {
     color: white;
     font-size:35px;
@@ -63,10 +106,49 @@ h1 {
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
-
+    margin-top: 25px;
+    font-size: 21px;
+    text-align: center;
+    animation: fadein 2s;
+    -moz-animation: fadein 3s;
+    -webkit-animation: fadein 3s;
+    -o-animation: fadein 3s;
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .quote{
+   color:#ff6961;
     position: fixed;
     font-size:35px;
     top: 505px;
@@ -74,7 +156,37 @@ h1 {
     transform: translate(-50%, -50%);
 
 
+    animation: slide-up-fade-in ease 1s;
+    animation-iteration-count: 1;
+    transform-origin: 50% 50%;
+    animation-fill-mode:forwards; /*when the spec is finished*/
+    -webkit-animation: slide-up-fade-in ease 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/
+
 }
+
+
+@keyframes slide-up-fade-in{
+    0% {
+        opacity:0;
+        transform:  translate(0px,500px)  ;
+    }
+
+
+
+    100% {
+        opacity:1;
+        transform:  translate(0px,0px)  ;
+    }
+}
+
+
+
+
+
+
 
 
   h3 {
