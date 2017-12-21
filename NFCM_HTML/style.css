@@ -1,47 +1,55 @@
-
-
-
-  * {
+* {
     box-sizing: border-box;
   }
   body {
     background-color: #FF8D87;
     font-family: Helvetica;
 
-
-  }
+ }
  .landing{
   background-color: grey;
  }
- #root{
+/* .root{
   background-color: white;
   width: 20px;
-  height: 1px;
+  height: 10px;
   transition: all 0.5s ease-out 0s;
   -webkit-transition: all 0.5s ease-out 0s;
 
+}*/
+
+input{
+    background-color: white ;
+    padding: 15px;
+    margin: 30px;
+    border-radius: 8px;
+    width: 300px;
+
+
 }
 
-.col-animate {
-  height: 50px;
-}
+.userflow label {
+  display: inline-block;
+  width: 300px;
+  text-align: right;
+  color:white;
+  font-size: 75px;
+}​
 
- }
-
-  .userbox {
+ .userbox {
     background-color: white ;
     padding: 5px;
     margin: 15px;
     border-radius: 8px;
   }
 
-  .user-description {
+.user-description {
     margin: 6px;
   }
 
-  .header {
+.header {
     margin: 10px;
-    text-align: center;
+   text-align: center;
 
   }
 
@@ -64,7 +72,7 @@ h1 {
     top: 505px;
     left: 500px;
     transform: translate(-50%, -50%);
-    tranform:;
+
 
 }
 
