@@ -15,9 +15,9 @@ app.listen(PORT, () => {
   console.log(`${PORT}: A Space Odyssey`);
 });
 
-// const plansRoutes = require('./routes/plans-routes');
-// app.use('/api/plans', plansRoutes);
+const plansRoutes = require('./routes/plans-routes');
 
+app.use('/api/plans', plansRoutes);
 
 // const usersRoutes = require('./routes/users-routes');
 // app.use('/api/users', usersRoutes);
