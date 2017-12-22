@@ -1,3 +1,4 @@
+!('NODE_ENV' in process.env) && require('dotenv').config();
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
@@ -12,9 +13,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.listen(PORT, () => {
-  console.log(`${PORT}: A Space Odyssey`);
-});
 
 //const plansRoutes = require('./routes/plans-routes');
 
@@ -37,4 +35,8 @@ app.use((err, req, res, next) => {
     error: err,
     message: err.message,
   });
+});
+
+app.listen(PORT, () => {
+  console.log(`${PORT}: A Space Odyssey`);
 });

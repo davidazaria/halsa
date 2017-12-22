@@ -50,11 +50,11 @@ const config = {
       },
     }),
     new HtmlWebpackPlugin({
-      title:      'React Skeleton',
+      title:      'Halsa',
       xhtml:      true,
       inject:     false,
       template:   htmlTemplate,
-      appMountId: 'container',
+      appMountId: 'root',
     }),
     new ExtractTextPlugin('/css/[name].css', {
       allChunks: true,
