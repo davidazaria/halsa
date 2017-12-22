@@ -6,16 +6,17 @@ const options = {
 
 const pgp = require('pg-promise')(options);
 
+const config = {
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT BD_NAME,
+  database: process.env.BD_NAME,
+  user: process.env.DB_USER
+}
+
 function setDatabase() {
-  if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
-    return pgp({
-      host: 'localhost',
-      database: 'halsa_health',
-      port: 5432,
-    });
-  } else if (process.env.NODE_ENV === 'production') {
-    return pgp(process.env.DATABASE_URL);
-  }
+  return (
+    return pgp(process.env.DATABASE_URL || config)
+  )
 }
 
 const db = setDatabase();
