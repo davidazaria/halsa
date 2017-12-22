@@ -4,7 +4,6 @@ import './App.css';
 import { Switch, Route } from "react-router-dom";
 import { Form } from './components/Form.js'
 
-
 class App extends Component {
   constructor() {
     super();
