@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 
 class PlansList extends Component {
   constructor() {
+    super();
     this.state = {
       apiDataLoaded: false,
       apiData: ''
@@ -12,8 +13,8 @@ class PlansList extends Component {
     //BIND YOUR METHODS!!
   }
 
-  //take zip from user, interpolate into api  url
-  //Return object of zip code api
+  //take zip from user, interpolate into api url
+  //Return object from zip code api
   //In set state, collect State abbreviation from json object
   //In lists component, plug in US states names into each health plan component
 
@@ -72,56 +73,56 @@ class PlansList extends Component {
     return(
       <div className="plans-list">
         <div className="plan-1">
-          <h1>Halsa Health Bronze Choice 3000: {props.location}</h1>
-          <h2>Price Multiple: {this.priceMultiple}</h2>
-          <h2>In-Network Deductable: {this.inNetwork}</h2>
-          <h2>Out-Of-Network Deductable: {this.outNetwork}</h2>
-          <h2>Maximum Out of Pocket: {this.maxPocket}</h2>
-          <h2>Primary Care Co-Pay: {this.primary}</h2>
-          <h2>Specialist Co-Pay: {this.specialist}</h2>
-          <h2>Urgent Care Co-Pay: {this.urgent}</h2>
-          <h2>Generic Drugs: {this.generic}</h2>
-          <h2>Brand Drugs: {this.brand}</h2>
-          <h2>Concierge Acces: {this.concierge}</h2>
+          <h1>Halsa Health Bronze Choice 3000: DATA</h1>
+          <h2>Price Multiple: DATA</h2>
+          <h2>In-Network Deductable: DATA</h2>
+          <h2>Out-Of-Network Deductable: DATA </h2>
+          <h2>Maximum Out of Pocket: DATA</h2>
+          <h2>Primary Care Co-Pay: DATA</h2>
+          <h2>Specialist Co-Pay: DATA</h2>
+          <h2>Urgent Care Co-Pay:</h2>
+          <h2>Generic Drugs: DATA </h2>
+          <h2>Brand Drugs: DATA</h2>
+          <h2>Concierge Acces: DATA </h2>
         </div>
         <div className="plan-2">
-          <h1>Halsa Health Silver Choice 2000: {props.location}</h1>
-          <h2>Price Multiple: {this.priceMultiple}</h2>
-          <h2>In-Network Deductable: {this.inNetwork}</h2>
-          <h2>Out-Of-Network Deductable: {this.outNetwork}</h2>
-          <h2>Maximum Out of Pocket: {this.maxPocket}</h2>
-          <h2>Primary Care Co-Pay: {this.primary}</h2>
-          <h2>Specialist Co-Pay: {this.specialist}</h2>
-          <h2>Urgent Care Co-Pay: {this.urgent}</h2>
-          <h2>Generic Drugs: {this.generic}</h2>
-          <h2>Brand Drugs: {this.brand}</h2>
-          <h2>Concierge Acces: {this.concierge}</h2>
+          <h1>Halsa Health Bronze Choice 3000: DATA</h1>
+          <h2>Price Multiple: DATA</h2>
+          <h2>In-Network Deductable: DATA</h2>
+          <h2>Out-Of-Network Deductable: DATA </h2>
+          <h2>Maximum Out of Pocket: DATA</h2>
+          <h2>Primary Care Co-Pay: DATA</h2>
+          <h2>Specialist Co-Pay: DATA</h2>
+          <h2>Urgent Care Co-Pay:</h2>
+          <h2>Generic Drugs: DATA </h2>
+          <h2>Brand Drugs: DATA</h2>
+          <h2>Concierge Acces: DATA </h2>
         </div>
         <div className="plan-3">
-          <h1>Halsa Health Gold Choice 1000: {props.location}</h1>
-          <h2>Price Multiple: {this.priceMultiple}</h2>
-          <h2>In-Network Deductable: {this.inNetwork}</h2>
-          <h2>Out-Of-Network Deductable: {this.outNetwork}</h2>
-          <h2>Maximum Out of Pocket: {this.maxPocket}</h2>
-          <h2>Primary Care Co-Pay: {this.primary}</h2>
-          <h2>Specialist Co-Pay: {this.specialist}</h2>
-          <h2>Urgent Care Co-Pay: {this.urgent}</h2>
-          <h2>Generic Drugs: {this.generic}</h2>
-          <h2>Brand Drugs: {this.brand}</h2>
-          <h2>Concierge Acces: {this.concierge}</h2>
+          <h1>Halsa Health Bronze Choice 3000: DATA</h1>
+          <h2>Price Multiple: DATA</h2>
+          <h2>In-Network Deductable: DATA</h2>
+          <h2>Out-Of-Network Deductable: DATA </h2>
+          <h2>Maximum Out of Pocket: DATA</h2>
+          <h2>Primary Care Co-Pay: DATA</h2>
+          <h2>Specialist Co-Pay: DATA</h2>
+          <h2>Urgent Care Co-Pay:</h2>
+          <h2>Generic Drugs: DATA </h2>
+          <h2>Brand Drugs: DATA</h2>
+          <h2>Concierge Acces: DATA </h2>
         </div>
         <div className="plan-4">
-          <h1>Halsa Health Platinum Select Plus: {props.location}</h1>
-          <h2>Price Multiple: {this.priceMultiple}</h2>
-          <h2>In-Network Deductable: {this.inNetwork}</h2>
-          <h2>Out-Of-Network Deductable: {this.outNetwork}</h2>
-          <h2>Maximum Out of Pocket: {this.maxPocket}</h2>
-          <h2>Primary Care Co-Pay: {this.primary}</h2>
-          <h2>Specialist Co-Pay: {this.specialist}</h2>
-          <h2>Urgent Care Co-Pay: {this.urgent}</h2>
-          <h2>Generic Drugs: {this.generic}</h2>
-          <h2>Brand Drugs: {this.brand}</h2>
-          <h2>Concierge Acces: {this.concierge}</h2>
+          <h1>Halsa Health Bronze Choice 3000: DATA</h1>
+          <h2>Price Multiple: DATA</h2>
+          <h2>In-Network Deductable: DATA</h2>
+          <h2>Out-Of-Network Deductable: DATA </h2>
+          <h2>Maximum Out of Pocket: DATA</h2>
+          <h2>Primary Care Co-Pay: DATA</h2>
+          <h2>Specialist Co-Pay: DATA</h2>
+          <h2>Urgent Care Co-Pay:</h2>
+          <h2>Generic Drugs: DATA </h2>
+          <h2>Brand Drugs: DATA</h2>
+          <h2>Concierge Acces: DATA </h2>
         </div>
       </div>
     )

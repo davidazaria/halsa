@@ -4,6 +4,7 @@ import PlansList from './PlansList.jsx'
 //Here is the the form component where users enter demographics
 class Form extends Component {
   constructor() {
+    super();
     this.state = {
       name: '',
       age: '',
@@ -27,6 +28,7 @@ class Form extends Component {
   //Else, render PlansList
 
   render() {
+    return(
     <div className="user-form">
       <form className={this.props.isAdd}>
         <input type="text" name="name" placeholder="name" value={this.state.name} onChange={this.handleInputChange} />
@@ -36,6 +38,7 @@ class Form extends Component {
         <input type="submit" />
       </form>
     </div>
+    )
   }
 };
 
