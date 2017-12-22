@@ -30,8 +30,11 @@ class Form extends Component {
   render() {
     return(
     <div className="user-form">
+
       <form className={this.props.isAdd}>
+      <div className="userflow1">
         <input type="text" name="name" placeholder="name" value={this.state.name} onChange={this.handleInputChange} />
+        </div>
         <input type="text" name="age" placeholder="age" value={this.state.age} onChange={this.handleInputChange} />
         <input type="text" name="zip" placeholder="zip" value={this.state.zip} onChange={this.handleInputChange} />
         <input type="text" name="income" placeholder="income" value={this.state.income} onChange={this.handleInputChange} />
