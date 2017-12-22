@@ -1,0 +1,92 @@
+
+body {
+    background-color: #FF8D87;
+    font-family: Helvetica;
+
+ }
+
+
+
+input{
+    background-color: white ;
+    padding: 15px;
+    margin: 30px;
+    border-radius: 8px;
+    width: 300px;
+    font-size: 35px;
+    border: 0px solid
+
+
+}
+
+
+.user-form{
+  color:white;
+  font-size: 75px;
+}
+
+.userflow1{
+   position: absolute;
+   margin-top: 35px;
+   padding-left: 359px;
+   left: -1000px;
+   -webkit-animation: slide 0.5s forwards;
+    -webkit-animation-delay: .1s;
+    animation: slide 0.5s forwards;
+    animation-delay: .1s;
+
+}
+.userflow2{
+   position: absolute;
+   margin-top: 135px;
+   padding-left: 359px;
+   left: -1000px;
+   -webkit-animation: slide 0.5s forwards;
+    -webkit-animation-delay: .2s;
+    animation: slide 0.5s forwards;
+    animation-delay: .5s;
+}
+.userflow3{
+   position: absolute;
+   margin-top: 240px;
+   padding-left: 359px;
+   left: -1000px;
+   -webkit-animation: slide 0.5s forwards;
+    -webkit-animation-delay: .2s;
+    animation: slide 0.5s forwards;
+    animation-delay: .9s;
+}
+.userflow4{
+   position: absolute;
+   margin-top: 350px;
+   padding-left: 359px;
+   left: -1000px;
+   -webkit-animation: slide 0.5s forwards;
+    -webkit-animation-delay: .2s;
+    animation: slide 0.5s forwards;
+    animation-delay: 1.2s;
+}
+
+
+
+@-webkit-keyframes slide {
+    100% { left: 0; }
+}
+
+@keyframes slide {
+    100% { left: 0; }
+}
+
+
+
+
+
+
+
+.userflow label {
+  display: inline-block;
+  text-align: right;
+
+}​
+
+

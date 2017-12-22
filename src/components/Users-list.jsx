@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { NavLink } from "react-router-dom";
 
 
 //get use
@@ -14,7 +14,9 @@ const UsersList = () => {
         </div>
 
 
-         <span className="clickme" /*onClick={() => props.setEditing(props.user.id)}*/ >Edit</span>
+         <NavLink to="/" className="nav-link" activeClassName="active">
+        Edit
+      </NavLink>
 
     </div>
 )

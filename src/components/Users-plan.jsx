@@ -18,9 +18,16 @@ const UserPlan = () => {
  {/* add get form for new quote*/}
       {/* add get plan from planlist*/}
  <div className="buttons">
-        <Link className="button1" to="/">Get new quote</Link>
 
-        <Link className="button2" to="/">Choose another plan</Link>
+    <NavLink to="/people" className="nav-item" activeClassName="active">
+        Get new quote
+      </NavLink>
+
+      <NavLink to="/people" className="nav-item" activeClassName="active">
+      Choose another plan
+       </NavLink>
+
+
    </div>
 
 
