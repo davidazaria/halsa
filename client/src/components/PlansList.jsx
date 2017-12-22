@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 //Probably need to make this stateful
 //In state, collect data from plans database: age, priceMultiple, etc...
 
-const PlansList = (props) => {
+class PlansList extends Component {
+  constructor() {
+    this.state = {
+      apiDataLoaded: false,
+      apiData: ''
+    };
+    //BIND YOUR METHODS!!
+  }
 
   //take zip from user, interpolate into api  url
   //Return object of zip code api
@@ -15,6 +22,46 @@ const PlansList = (props) => {
   //Collect price_multiple and..
   //takes age from input, and multiplies by the price_multiple (depends on the plan).
 
+  priceMultiple(age) {
+    fetch(/*David's API*/)
+    .then(res => {
+      this.setState({
+        data: res.data.price_multiple
+      })
+    });
+    return this.data * age;
+  }
+
+  inNetwork(age) {
+    fetch(/*David's API for Bronze plan*/)
+    .then(res => {
+      this.setState({
+        data: res.data.in_network_deductible
+      })
+    });
+    return this.data * age;
+  }
+
+  outNetwork(age) {
+    fetch(/*David's API for Bronze plan*/)
+    .then(res => {
+      this.setState({
+        data: res.data.out_of_network_deductible
+      })
+    });
+    return this.data * age;
+  }
+
+
+  maxPocket(age) {
+    fetch(/*David's API for Bronze plan*/)
+    .then(res => {
+      this.setState({
+        data: res.data.in_network_deductible
+      })
+    });
+    return this.data * age;
+  }
   //If plan 1, method-for-plan A
   //If plan 1, method for-plan B
 
