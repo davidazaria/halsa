@@ -4,9 +4,11 @@ const HtmlWebpackPlugin  = require('html-webpack-plugin');
 const ExtractTextPlugin  = require('extract-text-webpack-plugin');
 const htmlTemplate       = require('html-webpack-template');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
-const BUILD_DIR         = path.resolve(__dirname, 'dist');
-const APP_DIR           = path.resolve(__dirname, 'src');
+
+const BUILD_DIR = path.resolve(__dirname, 'dist');
+const APP_DIR   = path.resolve(__dirname, 'src');
 
 const fontLoaderConfig = {
   name:  '/fonts/[name].[ext]',
@@ -18,14 +20,15 @@ if (!('NODE_ENV' in process.env)) require('dotenv').config();
 
 const config = {
   entry: {
-    main: `${APP_DIR}/main.jsx`,
+    main:   `${APP_DIR}/index.js`,
+    vendor: ['axios', 'react', 'react-dom', 'prop-types'],
   },
   output: {
     path:     BUILD_DIR,
     filename: 'js/[name].js',
   },
   cache:   true,
-  devtool: 'inline-source-map',
+  devtool: 'eval',
   stats:   {
     colors:  true,
     reasons: true,
@@ -35,10 +38,7 @@ const config = {
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      names:     ['common', 'main'],
-      minChunks: Infinity,
-      children:  true,
-      async:     true,
+      names: ['common', 'vendor'],
     }),
     new CleanWebpackPlugin(['dist']),
     new webpack.LoaderOptionsPlugin({
@@ -50,11 +50,11 @@ const config = {
       },
     }),
     new HtmlWebpackPlugin({
-      title:      'React Skeleton',
+      title:      'Halsa',
       xhtml:      true,
       inject:     false,
       template:   htmlTemplate,
-      appMountId: 'container',
+      appMountId: 'root',
     }),
     new ExtractTextPlugin('/css/[name].css', {
       allChunks: true,
@@ -64,7 +64,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.s(a|c)ss$/,
+        test: /\.s[ac]ss$/,
         use:  ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use:      'css-loader!sass-loader',
@@ -142,6 +142,11 @@ const config = {
     ],
   },
 };
+
+if (process.env && process.env.ANALYZE_WEBPACK) {
+  console.log(process.env);
+  config.plugins.unshift(new BundleAnalyzerPlugin());
+}
 
 if (process.env &&
   process.env.NODE_ENV &&
