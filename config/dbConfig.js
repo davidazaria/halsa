@@ -8,7 +8,7 @@ const pgp = require('pg-promise')(options);
 
 const config = {
   host: process.env.DB_HOST,
-  port: process.env.DB_PORT BD_NAME,
+  port: process.env.DB_PORT,
   database: process.env.BD_NAME,
   user: process.env.DB_USER
 }
