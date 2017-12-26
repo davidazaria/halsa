@@ -4,7 +4,6 @@ import './App.css';
 import { Switch, Route } from "react-router-dom";
 import { Form } from './components/Form.js'
 
-
 class App extends Component {
   constructor() {
     super();
@@ -13,11 +12,39 @@ class App extends Component {
       apiData: ''
     };
     //BIND YOUR METHODS HERE!!!
+    this.getUsersPlan = this.getUsersPlan.bind(this);
+    this.showUserList = this.
   }
 
   async componentDidMount() {
     //Need axios or fetch?
   }
+
+
+  getUsersPlan() {
+    fetch('')
+    .then(res => res.json())
+    .then(res => {
+      this.setState
+        plansData:res.data.plans
+
+}
+)
+
+    showUserList() {
+      fetch(''
+        .then(res => res.json())
+        .then(res => {
+          this.setState
+          plansData:res.
+        })
+))
+    this.setState({
+    plansData: true,
+    });
+  }
+
+
 
   render() {
     return (
@@ -31,5 +58,5 @@ class App extends Component {
     );
   }
 }
-
+}
 export default App;
