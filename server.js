@@ -2,7 +2,7 @@
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
-const path = require('path')
+const path = require('path');
 
 const app = express();
 
@@ -13,14 +13,14 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//  const plansRoutes = require('./routes/plans-routes');
+// const plansRoutes = require('./routes/plans-routes');
 
-//  app.use('/api/plans', plansRoutes);
+// app.use('/api/plans', plansRoutes);
 
-//  const usersRoutes = require('./routes/users-routes');
+// const usersRoutes = require('./routes/users-routes');
 
-//  app.use('/api/users', usersRoutes);
-//  app.use('/', console.log("Hello World"))
+// app.use('/api/users', usersRoutes);
+// app.use('/', console.log('Hello World'));
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
@@ -31,7 +31,8 @@ app.use('*', (req, res) => {
 app.use((err, req, res, next) => {
   console.log(err);
   res.status(500).json({
-    error: err,
+    error:
+    err,
     message: err.message,
   });
 });
