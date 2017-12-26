@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-//import { Switch, Route } from 'react-dom-router';
+//  import { Switch, Route } from 'react-dom-router';
 import Form from './components/Form.jsx';
 import PlansList from './components/PlansList.jsx';
 import Header from './components/Header.jsx';
+import SelectedPlan from './components/SelectedPlan.jsx';
 
 class App extends Component {
   constructor() {
@@ -27,9 +27,11 @@ class App extends Component {
     return (
       <div className="App">
         <main>
-        <Header />
-        <Form />
-      </main>
+          <Header />
+          <Form />
+          <PlansList />
+          <SelectedPlan />
+        </main>
       </div>
     );
   }
