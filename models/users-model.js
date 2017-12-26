@@ -21,8 +21,8 @@ User.findById = (id) => {
 
 User.save = (user) => {
   return db.one(`
-    INSERT INTO users (plan_id, username, age, zip_code, household_size, income)
-    VALUES ($/plan_id/, $/username/, $/age/, $/zip_code/, $/household_size/, $/income/)
+    INSERT INTO users (plan_id, username, age, zip_code, income)
+    VALUES ($/plan_id/, $/username/, $/age/, $/zip_code/, $/income/)
     RETRUNING *
       `, user);
 };
@@ -35,7 +35,6 @@ User.update = (user) => {
     username = $/username/,
     age = $/age/,
     zip_code = $/zip_code/,
-    household_size = $/household_size/,
     income = $/income/
     WHERE id = $/id/
     RETRUNING *
