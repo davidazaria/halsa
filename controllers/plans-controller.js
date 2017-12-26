@@ -15,7 +15,7 @@ plansController.exports = {
 
 plansController.show = (req, res, next) => {
   plansDB.findById(req.params.id)
-    .then(plan => {
+    .then((plan) => {
       res.json({
         message: 'ok',
         data:
