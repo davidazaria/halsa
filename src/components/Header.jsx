@@ -1,5 +1,5 @@
-import React from 'react';
-import halsalogo from '../halsalogo.png';
+import React, { Component } from 'react';
+import halsalogo from '../image/halsalogo.png';
 
 export default class Header extends Component {
   render() {
@@ -12,5 +12,3 @@ export default class Header extends Component {
     );
   }
 }
-
-export default Header;
