@@ -13,15 +13,15 @@ class App extends Component {
       apiDataLoaded: false,
       apiData: ''
     };
-    //BIND YOUR METHODS HERE!!!
+    //  BIND YOUR METHODS HERE!!!
   }
 
-  //async componentDidMount() {
-    //Need axios or fetch?
-  //}
+  //  async componentDidMount() {
+  //  Need axios or fetch?
+  //  }
 
-//Show logo and button here
-//Click button to go the forms
+  //  Show logo and button here
+  //  Click button to go the forms
 
   render() {
     return (
