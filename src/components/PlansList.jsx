@@ -74,59 +74,59 @@ class PlansList extends Component {
       <div className="plans-list">
         <div className="plan-1">
           <h2>Halsa Health Bronze Choice 3000: DATA</h2>
-          <h2>Price Multiple: DATA</h2>
-          <h2>In-Network Deductable: DATA</h2>
-          <h2>Out-Of-Network Deductable: DATA </h2>
-          <h2>Maximum Out of Pocket: DATA</h2>
-          <h2>Primary Care Co-Pay: DATA</h2>
-          <h2>Specialist Co-Pay: DATA</h2>
-          <h2>Urgent Care Co-Pay:</h2>
-          <h2>Generic Drugs: DATA </h2>
-          <h2>Brand Drugs: DATA</h2>
-          <h2>Concierge Acces: DATA </h2>
-          <input type="submit" className="button" onChange={/*Adds to your selected plan*/)
+          <p>Price Multiple: DATA</p>
+          <p>In-Network Deductable: DATA</p>
+          <p>Out-Of-Network Deductable: DATA </p>
+          <p>Maximum Out of Pocket: DATA</p>
+          <p>Primary Care Co-Pay: DATA</p>
+          <p>Specialist Co-Pay: DATA</p>
+          <p>Urgent Care Co-Pay:</p>
+          <p>Generic Drugs: DATA </p>
+          <p>Brand Drugs: DATA</p>
+          <p>Concierge Acces: DATA </p>
+          <input type="submit" className="button" />
         </div>
         <div className="plan-2">
           <h2>Halsa Health Bronze Choice 3000: DATA</h2>
-          <h1>Price Multiple: DATA</h1>
-          <h1>In-Network Deductable: DATA</h1>
-          <h1>Out-Of-Network Deductable: DATA </h1>
-          <h1>Maximum Out of Pocket: DATA</h1>
-          <h1>Primary Care Co-Pay: DATA</h1>
-          <h1>Specialist Co-Pay: DATA</h1>
-          <h1>Urgent Care Co-Pay:</h1>
-          <h1>Generic Drugs: DATA </h1>
-          <h1>Brand Drugs: DATA</h1>
-          <h1>Concierge Acces: DATA </h1>
-          <input type="submit" className="button" onChange={/*Adds to your selected plan*/)
+          <p>Price Multiple: DATA</p>
+          <p>In-Network Deductable: DATA</p>
+          <p>Out-Of-Network Deductable: DATA </p>
+          <p>Maximum Out of Pocket: DATA</p>
+          <p>Primary Care Co-Pay: DATA</p>
+          <p>Specialist Co-Pay: DATA</p>
+          <p>Urgent Care Co-Pay:</p>
+          <p>Generic Drugs: DATA </p>
+          <p>Brand Drugs: DATA</p>
+          <p>Concierge Acces: DATA </p>
+          <input type="submit" className="button" />
         </div>
         <div className="plan-3">
           <h2>Halsa Health Bronze Choice 3000: DATA</h2>
-          <h1>Price Multiple: DATA</h1>
-          <h1>In-Network Deductable: DATA</h1>
-          <h1>Out-Of-Network Deductable: DATA </h1>
-          <h1>Maximum Out of Pocket: DATA</h1>
-          <h1>Primary Care Co-Pay: DATA</h1>
-          <h1>Specialist Co-Pay: DATA</h1>
-          <h1>Urgent Care Co-Pay:</h1>
-          <h1>Generic Drugs: DATA </h1>
-          <h1>Brand Drugs: DATA</h1>
-          <h1>Concierge Acces: DATA </h1>
-          <input type="submit" className="button" onChange={/*Adds to your selected plan*/)
+          <p>Price Multiple: DATA</p>
+          <p>In-Network Deductable: DATA</p>
+          <p>Out-Of-Network Deductable: DATA </p>
+          <p>Maximum Out of Pocket: DATA</p>
+          <p>Primary Care Co-Pay: DATA</p>
+          <p>Specialist Co-Pay: DATA</p>
+          <p>Urgent Care Co-Pay:</p>
+          <p>Generic Drugs: DATA </p>
+          <p>Brand Drugs: DATA</p>
+          <p>Concierge Acces: DATA </p>
+          <input type="submit" className="button" />
         </div>
         <div className="plan-4">
           <h2>Halsa Health Bronze Choice 3000: DATA</h2>
-          <h1>Price Multiple: DATA</h1>
-          <h1>In-Network Deductable: DATA</h1>
-          <h1>Out-Of-Network Deductable: DATA </h1>
-          <h1>Maximum Out of Pocket: DATA</h1>
-          <h1>Primary Care Co-Pay: DATA</h1>
-          <h1>Specialist Co-Pay: DATA</h1>
-          <h1>Urgent Care Co-Pay:</h1>
-          <h1>Generic Drugs: DATA </h1>
-          <h1>Brand Drugs: DATA</h1>
-          <h1>Concierge Acces: DATA </h1>
-          <input type="submit" className="button" onChange={/*Adds to your selected plan*/)
+          <p>Price Multiple: DATA</p>
+          <p>In-Network Deductable: DATA</p>
+          <p>Out-Of-Network Deductable: DATA </p>
+          <p>Maximum Out of Pocket: DATA</p>
+          <p>Primary Care Co-Pay: DATA</p>
+          <p>Specialist Co-Pay: DATA</p>
+          <p>Urgent Care Co-Pay:</p>
+          <p>Generic Drugs: DATA </p>
+          <p>Brand Drugs: DATA</p>
+          <p>Concierge Acces: DATA </p>
+          <input type="submit" className="button" />
         </div>
       </div>
     )
