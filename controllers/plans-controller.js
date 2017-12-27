@@ -2,15 +2,15 @@ const plansDB = require('../models/plans-model');
 
 const plansController = {};
 
-plansController.exports = {
-  index(req, res, next) {
-    plansDB.findAll()
-      .then((plans) => {
-        res.locals.plans = plans;
-        next();
-      })
-      .catch(err => next(err));
-  },
+plansController.index = (req, res, next) => {
+  plansDB.findAll()
+    .then((plans) => {
+      res.json({
+        message: 'ok',
+        data:
+        { plans },
+      });
+    }).catch(next);
 };
 
 plansController.show = (req, res, next) => {
