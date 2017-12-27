@@ -27,7 +27,6 @@ class Form extends Component {
   //  Else, render PlansList
 
   render() {
-<<<<<<< HEAD
     return(
     <div className="user-form">
 
@@ -56,7 +55,6 @@ class Form extends Component {
         </form>
       </div>
     );
->>>>>>> master
   }
 }
 
