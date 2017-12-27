@@ -49,13 +49,10 @@ class Form extends Component {
   //  Else, render PlansList
 
   render() {
-<<<<<<< HEAD
     if (!this.state.plans) {
       return(<p className="Loading">Loading...</p>)
     }
-=======
 
->>>>>>> 0461f9e11b38fe75e33d52da2e6b551df467067d
     return(
     <div className="user-form">
       <form className={this.props.isAdd} onSubmit={this.handleSubmit}>
