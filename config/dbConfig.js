@@ -10,13 +10,13 @@ const config = {
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
   database: process.env.BD_NAME,
-  user: process.env.DB_USER
+  user: process.env.DB_USER,
 }
 
 function setDatabase() {
   return (
-    return pgp(process.env.DATABASE_URL || config)
-  )
+    pgp(process.env.DATABASE_URL || config)
+  );
 }
 
 const db = setDatabase();
