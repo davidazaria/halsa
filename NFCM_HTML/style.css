@@ -235,24 +235,42 @@ to {top:200px; opacity: 1}
   background: #ffffff;
 
 }
+.name {
+  color:black;
 
+  border-bottom: solid 3px #D3D3D3;
+}
 
 h3 {
     color: black;
     font-size: 20px;
-    margin: 4px;
+    margin: 2px;
     text-align: left;
   }
-
-
 
 
 .logo2 {
    position: relative;
 
+}
+
+ .plan-1{
+   font-size:9px;
+   width:500px;
+   border: solid white ;
+   border-radius:1em;
+   box-shadow: 20px black;
+   margin-top: 35px;
+   padding-top:-3px;
+   padding-left: 5px;
+   background-color: white;
+
+}
+
+.box1{
+  border-bottom:solid 3px #D3D3D3;
+  color:#000083;
 
 
 }
 
-
-  </style>

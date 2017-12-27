@@ -4,9 +4,18 @@ import './App.css';
 import Form from './components/Form.jsx';
 import PlansList from './components/PlansList.jsx';
 import Header from './components/Header.jsx';
+<<<<<<< HEAD
 // import UsersPlan from './components/UserPlan.jsx';
 import SelectedPlan from './components/SelectedPlan.jsx';
 import axios from 'axios'
+=======
+
+// import UsersPlan from './components/UserPlan.jsx';
+
+
+// import SelectedPlan from './components/SelectedPlan.jsx';
+
+>>>>>>> 0461f9e11b38fe75e33d52da2e6b551df467067d
 
 class App extends Component {
   constructor() {
