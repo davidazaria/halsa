@@ -13,9 +13,8 @@ const config = {
   port:
   process.env.DB_PORT,
   database:
-  process.env.BD_NAME,
-  user:
-  process.env.DB_USER,
+  process.env.DB_NAME,
+
 };
 
 function setDatabase() {
