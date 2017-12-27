@@ -233,10 +233,7 @@ input[type="submit"]:hover {
   color: ; /* red */
   letter-spacing: 3px;
   background: #ffffff;
-
 }
-
-
 h3 {
     color: black;
     font-size: 20px;
@@ -244,12 +241,26 @@ h3 {
     text-align: left;
   }
 
-
-
-
 .logo2 {
    position: relative;
+}
+
+.selected-plan{
+  font-size: ;
+  position:relative;
+  border: solid 20px white;
+  background-color:white;
+  font-family: 'Quicksand', sans-serif;
 
 
 
 }
+
+
+
+
+
+
+
+
+
