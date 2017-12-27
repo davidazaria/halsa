@@ -4,7 +4,12 @@ import './App.css';
 import Form from './components/Form.jsx';
 import PlansList from './components/PlansList.jsx';
 import Header from './components/Header.jsx';
+<<<<<<< HEAD
+// import UsersPlan from './components/UserPlan.jsx';
+
+=======
 import SelectedPlan from './components/SelectedPlan.jsx';
+>>>>>>> master
 
 class App extends Component {
   constructor() {
