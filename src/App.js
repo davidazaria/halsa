@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-//import { Switch, Route } from 'react-dom-router';
+//  import { Switch, Route } from 'react-dom-router';
 import Form from './components/Form.jsx';
 import PlansList from './components/PlansList.jsx';
 import Header from './components/Header.jsx';
+<<<<<<< HEAD
 // import UsersPlan from './components/UserPlan.jsx';
 
+=======
+import SelectedPlan from './components/SelectedPlan.jsx';
+>>>>>>> master
 
 class App extends Component {
   constructor() {
@@ -15,23 +18,25 @@ class App extends Component {
       apiDataLoaded: false,
       apiData: ''
     };
-    //BIND YOUR METHODS HERE!!!
+    //  BIND YOUR METHODS HERE!!!
   }
 
-  //async componentDidMount() {
-    //Need axios or fetch?
-  //}
+  //  async componentDidMount() {
+  //  Need axios or fetch?
+  //  }
 
-//Show logo and button here
-//Click button to go the forms
+  //  Show logo and button here
+  //  Click button to go the forms
 
   render() {
     return (
       <div className="App">
         <main>
-        <Header />
-        <Form />
-      </main>
+          <Header />
+          <Form />
+          <PlansList />
+          <SelectedPlan />
+        </main>
       </div>
     );
   }

@@ -1,8 +1,8 @@
 const db = require('../config/dbConfig');
 
-const User = {};
+const usersDB = {};
 
-User.findAll = () => {
+usersDB.findAll = () => {
   return db.many(`
     SELECT *
     FROM users
@@ -10,7 +10,7 @@ User.findAll = () => {
     ORDER BY u.username ASC`);
 };
 
-User.findById = (id) => {
+usersDB.findById = (id) => {
   return db.one(`
     SELECT *
     FROM users u
@@ -19,17 +19,29 @@ User.findById = (id) => {
     `, id);
 };
 
-User.save = (user) => {
+usersDB.save = (user) => {
   return db.one(`
+    INSERT INTO users (plan_id, username, age, zip_code, income)
+    VALUES ($/plan_id/, $/username/, $/age/, $/zip_code/, $/income/)
+    RETRUNING *
       `, user);
 };
 
-User.update = (user) => {
+usersDB.update = (user) => {
   return db.one(`
+    UPDATE users
+    SET
+    plan_id = $/plan_id/,
+    username = $/username/,
+    age = $/age/,
+    zip_code = $/zip_code/,
+    income = $/income/
+    WHERE id = $/id/
+    RETRUNING *
       `, user);
 };
 
-User.destroy = (id) => {
+usersDB.destroy = (id) => {
   return db.none(`
     DELETE
     FROM users
@@ -37,4 +49,4 @@ User.destroy = (id) => {
     `, id);
 };
 
-module.exports = User;
+module.exports = usersDB;

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import PlansList from './PlansList.jsx'
 
-//Here is the the form component where users enter demographics
+//  Here is the the form component where users enter demographics
 class Form extends Component {
   constructor() {
     super();
@@ -10,12 +9,12 @@ class Form extends Component {
       age: '',
       zip: '',
       income: ''
-    }
-    //BIND METHODS!
+    };
+    //  BIND METHODS!
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  //Takes the input from the Form and saves it to state
+  //  Takes the input from the Form and saves it to state
   handleInputChange(e) {
     const name = e.target.name;
     const val  = e.target.value;
@@ -24,10 +23,11 @@ class Form extends Component {
     });
   }
 
-  //If !FormData, render Form
-  //Else, render PlansList
+  //  If !FormData, render Form
+  //  Else, render PlansList
 
   render() {
+<<<<<<< HEAD
     return(
     <div className="user-form">
 
@@ -50,7 +50,14 @@ class Form extends Component {
       </form>
     </div>
     )
+         onChange={this.handleInputChange}
+          />
+          <input type="submit" />
+        </form>
+      </div>
+    );
+>>>>>>> master
   }
-};
+}
 
 export default Form;
