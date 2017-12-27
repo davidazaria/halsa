@@ -27,7 +27,7 @@ class Form extends Component {
   //  Else, render PlansList
 
   render() {
-<<<<<<< HEAD
+
     return(
     <div className="user-form">
 
@@ -49,15 +49,11 @@ class Form extends Component {
 
       </form>
     </div>
-    )
-         onChange={this.handleInputChange}
-          />
-          <input type="submit" />
-        </form>
-      </div>
-    );
->>>>>>> master
-  }
-}
+)
+};
+
+
+
+
 
 export default Form;
