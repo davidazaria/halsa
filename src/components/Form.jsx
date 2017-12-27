@@ -35,10 +35,18 @@ class Form extends Component {
       <div className="userflow1">
         <input type="text" name="name" placeholder="name" value={this.state.name} onChange={this.handleInputChange} />
         </div>
+            <div className="userflow2">
         <input type="text" name="age" placeholder="age" value={this.state.age} onChange={this.handleInputChange} />
+           </div>
+               <div className="userflow3">
         <input type="text" name="zip" placeholder="zip" value={this.state.zip} onChange={this.handleInputChange} />
+        </div>
+           <div className="userflow4">
         <input type="text" name="income" placeholder="income" value={this.state.income} onChange={this.handleInputChange} />
+        </div>
+
         <input type="submit" />
+
       </form>
     </div>
     )
