@@ -1,10 +1,8 @@
 import React from 'react';
 
-
-
 //get use
 const UsersList = () => {
-   return(
+  return(
    	<div className ="user-list">
     <h3 >David Azaria </h3>
       <div class="user-description">
@@ -17,7 +15,7 @@ const UsersList = () => {
          <span className="clickme" /*onClick={() => props.setEditing(props.user.id)}*/ >Edit</span>
 
     </div>
-)
+  );
 }
 
 //for every id render sa user-list div
