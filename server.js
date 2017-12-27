@@ -27,14 +27,14 @@ app.use('*', (req, res) => {
   res.status(404).send('Not Found');
 });
 
-app.use((err, req, res, next) => {
-  console.log(err);
-  res.status(500).json({
-    error:
-    err,
-    message: err.message,
-  });
-});
+// app.use((err, req, res, next) => {
+//   console.log(err);
+//   res.status(500).json({
+//     error:
+//     err,
+//     message: err.message,
+//   });
+// });
 
 app.listen(PORT, () => {
   console.log(`Listening to: Andre ${PORT}`);

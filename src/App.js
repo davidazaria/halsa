@@ -4,12 +4,8 @@ import './App.css';
 import Form from './components/Form.jsx';
 import PlansList from './components/PlansList.jsx';
 import Header from './components/Header.jsx';
-<<<<<<< HEAD
 // import UsersPlan from './components/UserPlan.jsx';
-
-=======
 import SelectedPlan from './components/SelectedPlan.jsx';
->>>>>>> master
 
 class App extends Component {
   constructor() {
@@ -21,9 +17,15 @@ class App extends Component {
     //  BIND YOUR METHODS HERE!!!
   }
 
-  //  async componentDidMount() {
-  //  Need axios or fetch?
-  //  }
+  componentDidMount() {
+    fetch('http://localhost:3000/api/plans')
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          apiDataLoaded: true,
+        });
+      }).catch(err => console.log(err));
+  }
 
   //  Show logo and button here
   //  Click button to go the forms

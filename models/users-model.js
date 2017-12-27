@@ -5,8 +5,7 @@ const usersDB = {};
 usersDB.findAll = () => {
   return db.many(`
     SELECT *
-    FROM users
-    INNER JOIN plans p ON u.plan_id=p.id
+    FROM users u
     ORDER BY u.username ASC`);
 };
 
