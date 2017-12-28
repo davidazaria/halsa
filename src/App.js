@@ -66,7 +66,6 @@ class App extends Component {
         <main>
           <Header />
           <Form />
-          <SelectedPlan />
         </main>
       </div>
     );

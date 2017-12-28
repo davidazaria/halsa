@@ -94,6 +94,7 @@ class Form extends Component {
       </form>
       <PlansList
         age={this.state.age}
+        location={this.state.location}
         plansList={this.state.plans} />
     </div>
     );
