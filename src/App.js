@@ -6,7 +6,7 @@ import PlansList from './components/PlansList.jsx';
 import Header from './components/Header.jsx';
 // import UsersPlan from './components/UserPlan.jsx';
 import SelectedPlan from './components/SelectedPlan.jsx';
-import axios from 'axios'
+import axios from 'axios';
 
 // import UsersPlan from './components/UserPlan.jsx';
 
@@ -14,13 +14,12 @@ import axios from 'axios'
 // import SelectedPlan from './components/SelectedPlan.jsx';
 
 
-
 class App extends Component {
   constructor() {
     super();
     this.state = {
       plans: null,
-      apiDataLoaded: false
+      apiDataLoaded: false,
 
     };
     //  BIND YOUR METHODS HERE!!!
@@ -32,7 +31,7 @@ class App extends Component {
       .then(res => {
         this.setState({
           plans: res.data.data.plans,
-          apiDataLoaded: true
+          apiDataLoaded: true,
         });
       }).catch(err => console.log(err));
   }
@@ -41,25 +40,13 @@ class App extends Component {
   //  Click button to go the forms
 
 
-    //  take zip from user, interpolate into api url
-    //  Return object from zip code api
-    //  In set state, collect State abbreviation from json object
-    //  In lists component, plug in US states names into each health plan component
-
-    //  Make a function for each column in plansDB,
-    //  or make a function for each health plan that takes multiple args:
-    //  make api call (David's db)
-    //  Collect price_multiple and..
-    //  takes age from input, and multiplies by the price_multiple (depends on the plan).
-
-
-
-  //  Danny- Instead of using props in render here, pass in the function that will return you the result.
-  //  You just need a method that multiplies the numbers in plans table, with AGE INPUT from form.
+  // follow the ice cream methodology here
+  // what david wants to do is handle the CRUD elements for users here
+  // danny will receive the api call results as props, and map through them for the usersList component
 
   render() {
     if (!this.state.plans) {
-      return (<p className="Loading">Loading...</p>)
+      return (<p className="Loading">Loading...</p>);
     }
     return (
       <div className="App">
