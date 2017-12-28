@@ -9,13 +9,13 @@ class Form extends Component {
     this.state = {
       plans: null,
       apiDataLoaded: false,
-      name: '',
-      age: '',
-      zip: '',
-      income: ''
+      name: null,
+      age: null,
+      zip: null,
+      income: null
     };
     //  BIND METHODS!
-    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -30,7 +30,8 @@ class Form extends Component {
   }
 
   //  Takes the input from the Form and saves it to state
-  handleInputChange(e) {
+  handleChange(e) {
+    // e.preventDefault();
     const name = e.target.name;
     const val  = e.target.value;
     this.setState({
@@ -40,15 +41,17 @@ class Form extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    (res => {
+    axios.get(`http://api.zippopotam.us/us/${this.state.zip}`)
+    .then(res => {
       this.setState({
-        zip: e.target.value
+        location: res.data.places[0].state,
       })
-    })
-  }
+      console.log("hi! this is: "+this.state.location);
+      console.log("Hey dude, you're this old: "+this.state.age)
 
-  //  If !FormData, render Form
-  //  Else, render PlansList
+    });
+
+  }
 
   render() {
     if (!this.state.plans) {
@@ -66,7 +69,7 @@ class Form extends Component {
                 type="text"
                 name="age"
                 placeholder="age"
-                onChange={this.handleInputChange}
+                onChange={this.handleChange}
               />
            </div>
            <div className="userflow3">
@@ -74,7 +77,7 @@ class Form extends Component {
               type="text"
               name="zip"
               placeholder="zip"
-              onChange={this.handleInputChange}
+              onChange={this.handleChange}
             />
           </div>
            <div className="userflow4">
@@ -82,7 +85,7 @@ class Form extends Component {
           type="text"
           name="income"
           placeholder="income"
-          onChange={this.handleInputChange}
+          onChange={this.handleChange}
          />
         </div>
         <input
