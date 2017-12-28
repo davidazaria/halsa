@@ -41,16 +41,16 @@ class App extends Component {
   //  Click button to go the forms
 
 
-    //  take zip from user, interpolate into api url
-    //  Return object from zip code api
+  //  take zip from user, interpolate into api url
+  //  Return object from zip code api
     //  In set state, collect State abbreviation from json object
-    //  In lists component, plug in US states names into each health plan component
+  //  In lists component, plug in US states names into each health plan component
 
-    //  Make a function for each column in plansDB,
-    //  or make a function for each health plan that takes multiple args:
-    //  make api call (David's db)
-    //  Collect price_multiple and..
-    //  takes age from input, and multiplies by the price_multiple (depends on the plan).
+  //  Make a function for each column in plansDB,
+  //  or make a function for each health plan that takes multiple args:
+  //  make api call (David's db)
+  //  Collect price_multiple and..
+  //  takes age from input, and multiplies by the price_multiple (depends on the plan).
 
 
 

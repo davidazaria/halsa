@@ -41,7 +41,9 @@ class Form extends Component {
   handleSubmit(e) {
     e.preventDefault();
     (res => {
-      this.setState({})
+      this.setState({
+        zip: e.target.value
+      })
     })
   }
 
@@ -55,34 +57,44 @@ class Form extends Component {
 
     return(
     <div className="user-form">
-      <form className={this.props.isAdd} onSubmit={this.handleSubmit}>
+      <form className="user-form" onSubmit={this.handleSubmit}>
       <div className="userflow1">
         <input type="text" name="name" placeholder="name" />
         </div>
             <div className="userflow2">
-        <input type="text" name="age" placeholder="age" onChange={this.handleInputChange}/>
+              <input
+                type="text"
+                name="age"
+                placeholder="age"
+                onChange={this.handleInputChange}
+              />
            </div>
-               <div className="userflow3">
-        <input type="text" name="zip" placeholder="zip" />
-        </div>
+           <div className="userflow3">
+             <input
+              type="text"
+              name="zip"
+              placeholder="zip"
+              onChange={this.handleInputChange}
+            />
+          </div>
            <div className="userflow4">
-        <input type="text" name="income" placeholder="income" />
+        <input
+          type="text"
+          name="income"
+          placeholder="income"
+          onChange={this.handleInputChange}
+         />
         </div>
-        <input type="submit" name="submit" />
+        <input
+          type="submit"
+          name="submit" />
       </form>
-      <PlansList age={this.state.age} plansList={this.state.plans} />
+      <PlansList
+        age={this.state.age}
+        plansList={this.state.plans} />
     </div>
-<<<<<<< HEAD
     );
   }
 }
-=======
-)
-};
-
-
-
-
->>>>>>> 0461f9e11b38fe75e33d52da2e6b551df467067d
 
 export default Form;
