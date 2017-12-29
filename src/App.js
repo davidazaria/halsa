@@ -39,8 +39,7 @@ class App extends Component {
     axios.get('http://localhost:3000/api/plans')
       .then((res) => {
         this.setState({
-          plans:
-          res.data.data.plans,
+          plans: res.data.data.plans,
           apiPlanDataLoaded: true,
         });
       }).catch(err => console.log(err));
@@ -50,8 +49,7 @@ class App extends Component {
     axios.get('http://localhost:3000/api/users')
       .then((res) => {
         this.setState({
-          users:
-          res.data.data.users,
+          users: res.data.data.users,
           apiUserDataLoaded: true,
           shouldShowUserForm: false,
           currentlyEditing: null,
@@ -106,7 +104,6 @@ class App extends Component {
         <main>
           <Header />
           <Form />
-          <SelectedPlan />
         </main>
       </div>
     );
