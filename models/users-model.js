@@ -8,6 +8,17 @@ class UsersDB {
     this.zip_code = this.__validate(users.zip_code, 'zip_code');
     this.plan_id = this.__validate(users.plan_id, 'plan_id');
     this.income = this.__validate(users.income, 'income');
+    this.plan_name = this.__validate(users.plan_name, 'plan_name');
+    this.price_multiple = this.__validate(users.price_multiple, 'price_multiple');
+    this.in_network_deductible = this.__validate(users.in_network_deductible, 'in_network_deductible');
+    this.out_of_network_deductible = this.__validate(users.out_of_network_deductible, 'out_of_network_deductible');
+    this.maximum_out_of_pocket = this.__validate(users.maximum_out_of_pocket, 'maximum_out_of_pocket');
+    this.primary_care_copay = this.__validate(users.primary_care_copay, 'primary_care_copay');
+    this.specialist_copay = this.__validate(users.specialist_copay, 'specialist_copay');
+    this.urgent_care_copay = this.__validate(users.urgent_care_copay, 'urgent_care_copay');
+    this.generic_drugs = this.__validate(users.generic_drugs, 'generic_drugs');
+    this.brand_drugs = this.__validate(users.brand_drugs, 'brand_drugs');
+    this.concierge_access = this.__validate(users.concierge_access, 'concierge_access');
   }
 
   __validate(property, propType) {
