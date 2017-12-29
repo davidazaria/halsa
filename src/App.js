@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 //  import { Switch, Route } from 'react-dom-router';
-import Form from './components/Form.jsx';
-import PlansList from './components/PlansList.jsx';
-import Header from './components/Header.jsx';
+import axios from 'axios';
+import Form from './components/Form';
+import PlansList from './components/PlansList';
+import Header from './components/Header';
 // import UsersPlan from './components/UserPlan.jsx';
-import SelectedPlan from './components/SelectedPlan.jsx';
-import axios from 'axios'
+import SelectedPlan from './components/SelectedPlan';
 
 // import UsersPlan from './components/UserPlan.jsx';
 
@@ -14,52 +14,93 @@ import axios from 'axios'
 // import SelectedPlan from './components/SelectedPlan.jsx';
 
 
-
 class App extends Component {
   constructor() {
     super();
     this.state = {
       plans: null,
-      apiDataLoaded: false
+      users: null,
+      apiUserDataLoaded: false,
+      apiPlanDataLoaded: false,
+      shouldShowUserForm: false,
 
     };
-    //  BIND YOUR METHODS HERE!!!
+    this.usersSubmit = this.usersSubmit.bind(this);
+    this.showUserForm = this.showUserForm.bind(this); //  Danny do you think you'll need this?
+    this.setEditing = this.setEditing.bind(this); // Danny do you think you'll need this?
+    this.deleteUser = this.deleteUser.bind(this);
   }
 
-
   componentDidMount() {
+    this.getAllPlans();
+    this.getAllUsers();
+  }
+
+  getAllPlans() {
     axios.get('http://localhost:3000/api/plans')
-      .then(res => {
+      .then((res) => {
         this.setState({
-          plans: res.data.data.plans,
-          apiDataLoaded: true
+          plans:
+          res.data.data.plans,
+          apiPlanDataLoaded: true,
         });
       }).catch(err => console.log(err));
   }
 
-  //  Show logo and button here
-  //  Click button to go the forms
+  getAllUsers() {
+    axios.get('http://localhost:3000/api/users')
+      .then((res) => {
+        this.setState({
+          users:
+          res.data.data.users,
+          apiUserDataLoaded: true,
+          shouldShowUserForm: false,
+          currentlyEditing: null,
+        });
+      }).catch(err => console.log(err));
+  }
 
+  usersSubmit(method, event, data, id) {
+    event.preventDefault();
+    axios.get(`http://localhost:3000/api/users/${id || ''}`, {
+      method:
+      'method',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    }).then((res) => {
+      this.getAllUsers();
+    });
+  }
 
-    //  take zip from user, interpolate into api url
-    //  Return object from zip code api
-    //  In set state, collect State abbreviation from json object
-    //  In lists component, plug in US states names into each health plan component
+  deleteUser(id) {
+    axios.get(`http://localhost:3000/api/users/${id}`, {
+      method: 'DELETE',
+    }).then((res) => {
+      this.getAllUsers();
+    });
+  }
 
-    //  Make a function for each column in plansDB,
-    //  or make a function for each health plan that takes multiple args:
-    //  make api call (David's db)
-    //  Collect price_multiple and..
-    //  takes age from input, and multiplies by the price_multiple (depends on the plan).
+  //  Danny do you think you'll need this?
+  showUserForm() {
+    this.setState ({
+      shouldShowUserForm: true,
+    });
+  }
 
+  //  Danny do you think you'll need this?
+  setEditing(id) {
+    this.setState({
+      currentlyEditing: id,
+    });
+  }
 
-
-  //  Danny- Instead of using props in render here, pass in the function that will return you the result.
-  //  You just need a method that multiplies the numbers in plans table, with AGE INPUT from form.
+  // Danny, we might need to reconsider the below from a React behavior POV.
 
   render() {
     if (!this.state.plans) {
-      return (<p className="Loading">Loading...</p>)
+      return (<p className="Loading">Loading...</p>);
     }
     return (
       <div className="App">

@@ -72,17 +72,8 @@ class Form extends Component {
       </form>
       <PlansList age={this.state.age} plansList={this.state.plans} />
     </div>
-<<<<<<< HEAD
     );
   }
 }
-=======
-)
-};
-
-
-
-
->>>>>>> 0461f9e11b38fe75e33d52da2e6b551df467067d
 
 export default Form;
