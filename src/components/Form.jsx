@@ -9,13 +9,13 @@ class Form extends Component {
     this.state = {
       plans: null,
       apiDataLoaded: false,
-      name: '',
-      age: '',
-      zip: '',
-      income: ''
+      name: null,
+      age: null,
+      zip: null,
+      income: null
     };
     //  BIND METHODS!
-    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -30,7 +30,8 @@ class Form extends Component {
   }
 
   //  Takes the input from the Form and saves it to state
-  handleInputChange(e) {
+  handleChange(e) {
+    // e.preventDefault();
     const name = e.target.name;
     const val  = e.target.value;
     this.setState({
@@ -40,13 +41,17 @@ class Form extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    (res => {
-      this.setState({})
-    })
-  }
+    axios.get(`http://api.zippopotam.us/us/${this.state.zip}`)
+    .then(res => {
+      this.setState({
+        location: res.data.places[0].state,
+      })
+      console.log("hi! this is: "+this.state.location);
+      console.log("Hey dude, you're this old: "+this.state.age)
 
-  //  If !FormData, render Form
-  //  Else, render PlansList
+    });
+
+  }
 
   render() {
     if (!this.state.plans) {
@@ -55,34 +60,45 @@ class Form extends Component {
 
     return(
     <div className="user-form">
-      <form className={this.props.isAdd} onSubmit={this.handleSubmit}>
+      <form className="user-form" onSubmit={this.handleSubmit}>
       <div className="userflow1">
         <input type="text" name="name" placeholder="name" />
         </div>
             <div className="userflow2">
-        <input type="text" name="age" placeholder="age" onChange={this.handleInputChange}/>
+              <input
+                type="text"
+                name="age"
+                placeholder="age"
+                onChange={this.handleChange}
+              />
            </div>
-               <div className="userflow3">
-        <input type="text" name="zip" placeholder="zip" />
-        </div>
+           <div className="userflow3">
+             <input
+              type="text"
+              name="zip"
+              placeholder="zip"
+              onChange={this.handleChange}
+            />
+          </div>
            <div className="userflow4">
-        <input type="text" name="income" placeholder="income" />
+        <input
+          type="text"
+          name="income"
+          placeholder="income"
+          onChange={this.handleChange}
+         />
         </div>
-        <input type="submit" name="submit" />
+        <input
+          type="submit"
+          name="submit" />
       </form>
-      <PlansList age={this.state.age} plansList={this.state.plans} />
+      <PlansList
+        age={this.state.age}
+        location={this.state.location}
+        plansList={this.state.plans} />
     </div>
-<<<<<<< HEAD
     );
   }
 }
-=======
-)
-};
-
-
-
-
->>>>>>> 0461f9e11b38fe75e33d52da2e6b551df467067d
 
 export default Form;

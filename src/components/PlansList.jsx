@@ -11,6 +11,7 @@ const PlansList = (props) => {
           return (
             <PlanCard
               age={props.age}
+              location={props.location}
               key={plans.id}
               plan_name={plans.plan_name}
               price_multiple={plans.price_multiple}
