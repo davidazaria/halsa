@@ -27,7 +27,7 @@ class UsersDB {
   }
 
   static findAll() {
-    return db.manyOrNone('SELECT * FROM users u ORDER BY u.username ASC');
+    return db.manyOrNone('SELECT * FROM users u INNER JOIN plans p ON u.plan_id=p.id ORDER BY u.username ASC');
   }
 
   static findById(id) {

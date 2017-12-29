@@ -1,5 +1,5 @@
 \c halsa_health
 
-INSERT INTO users (username, age,
-zip_code, household_size, income) VALUES
-('John Johnson', 30, '11216', 1, 100000);
+INSERT INTO users (plan_id, username, age,
+zip_code, income) VALUES
+(1, 'John Johnson', 30, '11216', 100000);
