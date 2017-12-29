@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-//  import { Switch, Route } from 'react-dom-router';
 import axios from 'axios';
 import Form from './components/Form';
 import PlansList from './components/PlansList';
 import Header from './components/Header';
-// import UsersPlan from './components/UserPlan.jsx';
-import SelectedPlan from './components/SelectedPlan';
-
-// import UsersPlan from './components/UserPlan.jsx';
-
+import { Switch, Route } from 'react-router-dom';
 
 // import SelectedPlan from './components/SelectedPlan.jsx';
 
@@ -25,7 +20,7 @@ class App extends Component {
       shouldShowUserForm: false,
     };
     this.usersSubmit = this.usersSubmit.bind(this);
-    this.showUserForm = this.showUserForm.bind(this); //  Danny do you think you'll need this?
+    this.showUserForm = this.showUserForm.bind(this);
     this.setEditing = this.setEditing.bind(this); // Danny do you think you'll need this?
     this.deleteUser = this.deleteUser.bind(this);
   }
@@ -80,20 +75,18 @@ class App extends Component {
   }
 
   //  Danny do you think you'll need this?
-  showUserForm() {
-    this.setState ({
-      shouldShowUserForm: true,
-    });
-  }
-
-  //  Danny do you think you'll need this?
   setEditing(id) {
     this.setState({
       currentlyEditing: id,
     });
   }
 
-  // Danny, we might need to reconsider the below from a React behavior POV.
+  //  showUserForm if button was clicked
+  showUserForm() {
+    this.setState(prevState => ({
+      isClicked: true
+    }));
+  }
 
   render() {
     if (!this.state.plans) {
@@ -103,7 +96,11 @@ class App extends Component {
       <div className="App">
         <main>
           <Header />
-          <Form />
+          <button className="button" onClick={this.showUserForm}>
+            {this.state.isClicked
+              ? <Form />
+              : 'Get your quote!' }
+            </button>
         </main>
       </div>
     );
