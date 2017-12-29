@@ -1,9 +1,9 @@
-const usersDB = require('../models/users-model');
+const UsersDB = require('../models/users-model');
 
 const usersController = {};
 
 usersController.index = (req, res, next) => {
-  usersDB.findAll()
+  UsersDB.findAll()
     .then((users) => {
       res.json({
         message: 'ok',
@@ -14,7 +14,7 @@ usersController.index = (req, res, next) => {
 };
 
 usersController.show = (req, res, next) => {
-  usersDB.findById(req.params.id)
+  UsersDB.findById(req.params.id)
     .then((user) => {
       res.json({
         message: 'ok',
@@ -25,7 +25,7 @@ usersController.show = (req, res, next) => {
 };
 
 usersController.create = (req, res, next) => {
-  usersDB.create({
+  UsersDB.create({
     username:
     req.body.username,
     age:
@@ -46,7 +46,7 @@ usersController.create = (req, res, next) => {
 };
 
 usersController.update = (req, res, next) => {
-  usersDB.update({
+  UsersDB.update({
     username:
     req.body.username,
     age:
@@ -58,7 +58,7 @@ usersController.update = (req, res, next) => {
     income:
     req.body.income,
   }, req.user.id).then((user) => {
-    res.json({
+    res.status(202).json({
       message: 'User updated successfully!',
       data:
       { user },
@@ -67,7 +67,7 @@ usersController.update = (req, res, next) => {
 };
 
 usersController.delete = (req, res, next) => {
-  usersDB.destroy(req.params.id)
+  UsersDB.destroy(req.params.id)
     .then(() => {
       res.json({
         message: 'User deleted successfully!',
