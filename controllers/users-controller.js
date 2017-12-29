@@ -58,7 +58,7 @@ usersController.update = (req, res, next) => {
     income:
     req.body.income,
   }, req.user.id).then((user) => {
-    res.json({
+    res.status(202).json({
       message: 'User updated successfully!',
       data:
       { user },

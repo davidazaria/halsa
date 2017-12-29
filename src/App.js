@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 //  import { Switch, Route } from 'react-dom-router';
-import Form from './components/Form.jsx';
-import PlansList from './components/PlansList.jsx';
-import Header from './components/Header.jsx';
+import axios from 'axios';
+import Form from './components/Form';
+import PlansList from './components/PlansList';
+import Header from './components/Header';
 // import UsersPlan from './components/UserPlan.jsx';
 import SelectedPlan from './components/SelectedPlan.jsx';
-import axios from 'axios';
 
 // import UsersPlan from './components/UserPlan.jsx';
 
@@ -19,30 +19,82 @@ class App extends Component {
     super();
     this.state = {
       plans: null,
-      apiDataLoaded: false,
+      users: null,
+      apiUserDataLoaded: false,
+      apiPlanDataLoaded: false,
+      shouldShowUserForm: false,
 
     };
-    //  BIND YOUR METHODS HERE!!!
+    this.usersSubmit = this.usersSubmit.bind(this);
+    this.showUserForm = this.showUserForm.bind(this); //  Danny do you think you'll need this?
+    this.setEditing = this.setEditing.bind(this); // Danny do you think you'll need this?
+    this.deleteUser = this.deleteUser.bind(this);
   }
 
-
   componentDidMount() {
+    this.getAllPlans();
+    this.getAllUsers();
+  }
+
+  getAllPlans() {
     axios.get('http://localhost:3000/api/plans')
-      .then(res => {
+      .then((res) => {
         this.setState({
-          plans: res.data.data.plans,
-          apiDataLoaded: true,
+          plans:
+          res.data.data.plans,
+          apiPlanDataLoaded: true,
         });
       }).catch(err => console.log(err));
   }
 
-  //  Show logo and button here
-  //  Click button to go the forms
+  getAllUsers() {
+    axios.get('http://localhost:3000/api/users')
+      .then((res) => {
+        this.setState({
+          users:
+          res.data.data.users,
+          apiUserDataLoaded: true,
+          shouldShowUserForm: false,
+          currentlyEditing: null,
+        });
+      }).catch(err => console.log(err));
+  }
 
+  usersSubmit(method, event, data, id) {
+    event.preventDefault();
+    axios.get(`http://localhost:3000/api/users/${id || ''}`, {
+      method:
+      'method',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    }).then((res) => {
+      this.getAllUsers();
+    });
+  }
 
-  // follow the ice cream methodology here
-  // what david wants to do is handle the CRUD elements for users here
-  // danny will receive the api call results as props, and map through them for the usersList component
+  deleteUser(id) {
+    axios.get(`http://localhost:3000/api/users/${id}`, {
+      method: 'DELETE',
+    }).then((res) => {
+      this.getAllUsers();
+    });
+  }
+
+  //  Danny do you think you'll need this?
+  showUserForm() {
+    this.setState ({
+      shouldShowUserForm: true,
+    });
+  }
+
+  //  Danny do you think you'll need this?
+  setEditing(id) {
+    this.setState({
+      currentlyEditing: id,
+    });
+  }
 
   render() {
     if (!this.state.plans) {
