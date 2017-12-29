@@ -8,7 +8,6 @@ CREATE TABLE users (
   username VARCHAR(255),
   age BIGINT,
   zip_code VARCHAR(255),
-  household_size BIGINT,
   income BIGINT
 );
 

@@ -35,7 +35,7 @@ class UsersDB {
 
   static findById(id) {
     return db.one(`
-    SELECT *
+    SELECT DISTINCT u.id, u.plan_id, u.username, u.age, u.zip_code, u.income
     FROM users u
     WHERE u.id = $1
     `, id)
