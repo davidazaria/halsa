@@ -35,8 +35,9 @@ class UsersDB {
 
   static findById(id) {
     return db.one(`
-    SELECT DISTINCT u.id, u.plan_id, u.username, u.age, u.zip_code, u.income
+    SELECT *
     FROM users u
+    INNER JOIN plans p ON u.plan_id=p.id
     WHERE u.id = $1
     `, id)
       .then(users => new UsersDB(users));
