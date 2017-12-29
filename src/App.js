@@ -23,7 +23,6 @@ class App extends Component {
       apiUserDataLoaded: false,
       apiPlanDataLoaded: false,
       shouldShowUserForm: false,
-
     };
     this.usersSubmit = this.usersSubmit.bind(this);
     this.showUserForm = this.showUserForm.bind(this); //  Danny do you think you'll need this?

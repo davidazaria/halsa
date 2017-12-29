@@ -30,11 +30,13 @@ class UsersDB {
     return db.manyOrNone('SELECT * FROM users u ORDER BY u.username ASC');
   }
 
+// UNITL WE ARE ADDING PLANS TO A USER, WE NEED TO LEAVE OUT THE JOIN WITH PLANS BECAUSE IT WILL BREAK THE QUERY TO FIND ONE USER.
+// WHEN WE ARE READY TO INTRODUCE THE PLAN SELECTION PROCESS FOR A USER, I WILL HANDLE THE INNER JOIN
+
   static findById(id) {
     return db.one(`
     SELECT *
     FROM users u
-    INNER JOIN plans p ON u.plan_id=p.id
     WHERE u.id = $1
     `, id)
       .then(users => new UsersDB(users));
