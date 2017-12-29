@@ -6,7 +6,7 @@ import Form from './components/Form';
 import PlansList from './components/PlansList';
 import Header from './components/Header';
 // import UsersPlan from './components/UserPlan.jsx';
-import SelectedPlan from './components/SelectedPlan.jsx';
+import SelectedPlan from './components/SelectedPlan';
 
 // import UsersPlan from './components/UserPlan.jsx';
 
@@ -95,6 +95,8 @@ class App extends Component {
       currentlyEditing: id,
     });
   }
+
+  // Danny, we might need to reconsider the below from a React behavior POV.
 
   render() {
     if (!this.state.plans) {
