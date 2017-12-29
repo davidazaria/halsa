@@ -27,7 +27,7 @@ class UsersDB {
   }
 
   static findAll() {
-    return db.manyOrNone('SELECT * FROM users u ORDER BY u.username ASC');
+    return db.manyOrNone('SELECT * FROM users u INNER JOIN plans p ON u.plan_id=p.id ORDER BY u.username ASC');
   }
 
 // UNITL WE ARE ADDING PLANS TO A USER, WE NEED TO LEAVE OUT THE JOIN WITH PLANS BECAUSE IT WILL BREAK THE QUERY TO FIND ONE USER.
