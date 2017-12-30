@@ -66,6 +66,8 @@ class App extends Component {
     });
   }
 
+  //  This method will be used at the users-list component for deleting
+  //  users from our database.
   deleteUser(id) {
     axios.get(`http://localhost:3000/api/users/${id}`, {
       method: 'DELETE',
@@ -81,14 +83,14 @@ class App extends Component {
     });
   }
 
-  //  showUserForm if button was clicked
+  //  change state if button was clicked
   showUserForm() {
     this.setState(prevState => ({
       isClicked: true
     }));
   }
 
-  //  user must click button
+  //  user must click button to render form
 
   render() {
     if (!this.state.plans) {
@@ -98,11 +100,9 @@ class App extends Component {
       <div className="App">
         <main>
           <Header />
-          <button className="button" onClick={this.showUserForm}>
-            {this.state.isClicked
-              ? <Form />
-              : 'Get your quote!' }
-            </button>
+          {this.state.isClicked
+            ? <Form />
+            : <button className="button" onClick={this.showUserForm}>Get a quote!</button>}
         </main>
       </div>
     );
