@@ -24,6 +24,7 @@ class Form extends Component {
         this.setState({
           plans: res.data.data.plans,
         });
+        console.log('App is running!')
       }).catch(err => console.log(err));
   }
 
@@ -39,7 +40,7 @@ class Form extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    axios.get(`http://api.zippopotam.us/us/${this.state.zip}`)
+    axios.get(`http://api.zippopotam.us/us/${this.state.zip_code}`)
       .then((res) => {
         this.setState({
           location: res.data.places[0].state,

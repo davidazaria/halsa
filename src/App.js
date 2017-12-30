@@ -19,10 +19,10 @@ class App extends Component {
       apiPlanDataLoaded: false,
       shouldShowUserForm: false,
     };
-    this.usersSubmit  = this.usersSubmit.bind(this);
+    this.usersSubmit = this.usersSubmit.bind(this);
     this.showUserForm = this.showUserForm.bind(this);
-    this.setEditing   = this.setEditing.bind(this); // Danny do you think you'll need this?
-    this.deleteUser   = this.deleteUser.bind(this);
+    this.setEditing = this.setEditing.bind(this); // Danny do you think you'll need this?
+    this.deleteUser = this.deleteUser.bind(this);
   }
 
   componentDidMount() {
@@ -52,6 +52,20 @@ class App extends Component {
       }).catch(err => console.log(err));
   }
 
+  setEditing(id) {
+    this.setState({
+      currentlyEditing: id,
+    });
+  }
+
+  deleteUser(id) {
+    axios.get(`http://localhost:3000/api/users/${id}`, {
+      method: 'DELETE',
+    }).then((res) => {
+      this.getAllUsers();
+    });
+  }
+
   usersSubmit(method, event, data, id) {
     event.preventDefault();
     axios.get(`http://localhost:3000/api/users/${id || ''}`, {
@@ -63,23 +77,6 @@ class App extends Component {
       body: JSON.stringify(data),
     }).then((res) => {
       this.getAllUsers();
-    });
-  }
-
-  //  This method will be used at the users-list component for deleting
-  //  users from our database.
-  deleteUser(id) {
-    axios.get(`http://localhost:3000/api/users/${id}`, {
-      method: 'DELETE',
-    }).then((res) => {
-      this.getAllUsers();
-    });
-  }
-
-  //  Danny do you think you'll need this?
-  setEditing(id) {
-    this.setState({
-      currentlyEditing: id,
     });
   }
 
@@ -101,7 +98,7 @@ class App extends Component {
         <main>
           <Header />
           {this.state.isClicked
-            ? <Form />
+            ? <Form usersSubmit={this.usersSubmit} />
             : <button className="button" onClick={this.showUserForm}>Get a quote!</button>}
         </main>
       </div>
