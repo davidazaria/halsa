@@ -114,7 +114,8 @@ input{
   text-decoration: none;
   }
 
-.quote-button a {
+.button1 {
+
   margin-right: 50px;
   position: absolute;
   border: 3px solid white;
@@ -124,11 +125,21 @@ input{
   text-transform: uppercase;
 
   text-align: center;
-  color:white;
+  color:black;
+  margin-right: 50px;
+  position: relative;
+  border: 3px solid white;
+  border-radius: 19px;
+  font-size:40px;
+  padding:15px;
+  text-transform: uppercase;
+
+  text-align: center;
+
    transition: all 0.65s;
   bottom: 5%;
    right: -1000px;
-   -webkit-animation: slide-in 0.7s forwards;
+  -webkit-animation: slide-in 0.7s forwards;
     -webkit-animation-delay: .1s;
     animation: slide-in .7s forwards;
     animation-delay: 1.7s;
@@ -138,11 +149,9 @@ input{
     100% { right: 0px; }
 }
 
-@keyframes slide-in {
-    100% { right: 0px; }
-}
 
-.quote-button:hover {
+
+.button1:hover {
   color:  ; /* red */
   letter-spacing: 5px;
   background: ;
@@ -241,8 +250,10 @@ h3 {
     text-align: left;
   }
 
-.logo2 {
+.halsalogo {
    position: relative;
+   margin-left: 15px;
+   margin-top:11px;
 }
 
 .selected-plan{
@@ -269,8 +280,34 @@ h3 {
   position: relative;
 }
 .plan {
-     font-size:9px;
+  margin-left:30px;
+      font-size:15px;
    width:500px;
+   border: solid white ;
+   border-radius:1em;
+   box-shadow: 20px black;
+   margin-top: 35px;
+   padding-top:-3px;
+   padding-left: 5px;
+   background-color: white;
+
+  border-radius: 8px;
+  box-shadow: 0 11px 25px rgba(14,21,47,0.25);
+
+}
+
+.planName {
+  color:black;
+
+  border-bottom: solid 3px #D3D3D3;
+
+}
+
+
+.user-plan {
+    margin-left:30px;
+      font-size:15px;
+   width:700px;
    border: solid white ;
    border-radius:1em;
    box-shadow: 20px black;
@@ -281,6 +318,34 @@ h3 {
 
 }
 
+.congrats{
+  color:black;
 
+}
+.userbox{
+  margin-left:30px;
+      font-size:15px;
+   width:500px;
+   border: solid white ;
+   border-radius:1em;
+   box-shadow: 20px black;
+   margin-top: 35px;
+   padding-top:-3px;
+   padding-left: 5px;
+   background-color: white;
+
+  border-radius: 8px;
+  box-shadow: 0 11px 25px rgba(14,21,47,0.25);
+}
+/*.section1{
+
+  float:left;
+
+}
+.section2{
+
+  float:right;
+
+}*/
 
 

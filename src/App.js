@@ -105,7 +105,7 @@ class App extends Component {
       <div className="App">
         <main>
           <Header />
-          <button className="button" onClick={this.showUserForm}>
+          <button className="button1" onClick={this.showUserForm}>
             {this.state.isClicked
               ? <Form />
               : 'Get your quote!' }
