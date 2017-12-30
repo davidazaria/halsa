@@ -246,7 +246,7 @@ h3 {
 }
 
 .selected-plan{
-  font-size: ;
+  font-size:300px ;
   position:relative;
   border: solid 20px white;
   background-color:white;
@@ -257,7 +257,9 @@ h3 {
 }
 
 
-
+.app {
+  background-color: white;
+}
 
 
 
