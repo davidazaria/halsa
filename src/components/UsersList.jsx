@@ -1,25 +1,28 @@
+
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import User from './User';
 
 
 
-const UsersList = () => {
-   return(
-   	<div className ="user-list">
-    <h3 >Name </h3>
-      <div class="user-description">
-        <p>Plan </p>
-        <p>Zip </p>
-         <p> Income</p>
-        </div>
 
+const UsersList = (props) => {
+    return(
+      <div className="users-list">
+        {props.usersList.map(users => {
+          return (
+            <User
 
-         <NavLink to="/" className="nav-link" activeClassName="active">
-        Edit
-      </NavLink>
+              username={users.username}
+              plan_id={users.plan_id}
+              age={users.age}
+              income={users.income}
+              zip={users.zip}
 
-    </div>
-)
+              />
+          );
+        })}
+      </div>
+  );
 };
 
 export default UsersList;

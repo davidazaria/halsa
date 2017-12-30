@@ -5,9 +5,10 @@ import Form from './components/Form';
 import PlansList from './components/PlansList';
 import Header from './components/Header';
 import { Switch, Route } from 'react-router-dom';
-
+import UsersPlan from './components/UsersPlan';
 // import SelectedPlan from './components/SelectedPlan.jsx';
-
+import PlanCard from './components/PlanCard';
+import UsersList from './components/UsersList';
 
 class App extends Component {
   constructor() {
@@ -18,11 +19,17 @@ class App extends Component {
       apiUserDataLoaded: false,
       apiPlanDataLoaded: false,
       shouldShowUserForm: false,
+      isHidden: true,
+
     };
     this.usersSubmit = this.usersSubmit.bind(this);
     this.showUserForm = this.showUserForm.bind(this);
-    this.setEditing = this.setEditing.bind(this); // Danny do you think you'll need this?
-    this.deleteUser = this.deleteUser.bind(this);
+
+  }
+    toggleHidden () {
+    this.setState({
+      isHidden: !this.state.isHidden
+    })
   }
 
   componentDidMount() {
