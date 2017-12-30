@@ -19,10 +19,10 @@ class App extends Component {
       apiPlanDataLoaded: false,
       shouldShowUserForm: false,
     };
-    this.usersSubmit = this.usersSubmit.bind(this);
+    this.usersSubmit  = this.usersSubmit.bind(this);
     this.showUserForm = this.showUserForm.bind(this);
-    this.setEditing = this.setEditing.bind(this); // Danny do you think you'll need this?
-    this.deleteUser = this.deleteUser.bind(this);
+    this.setEditing   = this.setEditing.bind(this); // Danny do you think you'll need this?
+    this.deleteUser   = this.deleteUser.bind(this);
   }
 
   componentDidMount() {
@@ -87,6 +87,8 @@ class App extends Component {
       isClicked: true
     }));
   }
+
+  //  user must click button
 
   render() {
     if (!this.state.plans) {
