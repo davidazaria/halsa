@@ -1,0 +1,24 @@
+import React from 'react';
+
+import defaulticon from '../image/defaulticon.png';
+const User = (props) => {
+  return (
+    <div className="user-info">
+    <h1>Halsa Users</h1>
+
+     <div className="userbox">
+      <div className="default-icon">
+          <img src={defaulticon} width="" height="" />
+        </div>
+      <p>Name: {props.username}</p>
+       <p>Plan: {props.plan_id}</p>
+      <p>Age: {props.age} </p>
+      <p>Income:{props.income}</p>
+      <p>Zip:{props.zip_code}</p>
+</div>
+
+    </div>
+  )
+}
+
+export default User;

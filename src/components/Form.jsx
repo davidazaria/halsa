@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PlansList from './PlansList';
 import axios from 'axios';
+import UsersPlan from './UsersPlan'
 
 //  Here is the the form component where users enter demographics
 class Form extends Component {
@@ -13,6 +14,7 @@ class Form extends Component {
       age: null,
       zip: null,
       income: null
+
     };
     //  BIND METHODS!
     this.handleChange = this.handleChange.bind(this);
@@ -59,6 +61,7 @@ class Form extends Component {
     }
 
     return(
+      <div>
     <div className="user-form">
       <form className="user-form" onSubmit={this.handleSubmit}>
       <div className="userflow1">
@@ -88,14 +91,17 @@ class Form extends Component {
           onChange={this.handleChange}
          />
         </div>
-        <input
-          type="submit"
-          name="submit" />
+
+ <button className="submit" type="submit">Sign In</button>
+
       </form>
-      <PlansList
-        age={this.state.age}
-        location={this.state.location}
-        plansList={this.state.plans} />
+      </div>
+
+
+
+
+
+
     </div>
     );
   }
