@@ -7,7 +7,8 @@ import Header from './components/Header';
 import { Switch, Route } from 'react-router-dom';
 import UsersPlan from './components/UsersPlan';
 // import SelectedPlan from './components/SelectedPlan.jsx';
-
+import PlanCard from './components/PlanCard';
+import UsersList from './components/UsersList';
 
 class App extends Component {
   constructor() {
@@ -18,10 +19,17 @@ class App extends Component {
       apiUserDataLoaded: false,
       apiPlanDataLoaded: false,
       shouldShowUserForm: false,
+      isHidden: true,
+
     };
     this.usersSubmit = this.usersSubmit.bind(this);
     this.showUserForm = this.showUserForm.bind(this);
 
+  }
+    toggleHidden () {
+    this.setState({
+      isHidden: !this.state.isHidden
+    })
   }
 
   componentDidMount() {
@@ -87,6 +95,8 @@ class App extends Component {
     }));
   }
 
+
+
   render() {
     if (!this.state.plans) {
       return (<p className="Loading">Loading...</p>);
@@ -100,6 +110,28 @@ class App extends Component {
               ? <Form />
               : 'Get your quote!' }
             </button>
+
+          <div>
+        <button onClick={this.toggleHidden.bind(this)} >
+          check!
+        </button>
+
+        {!this.state.isHidden && <PlansList
+        age={this.state.age}
+        location={this.state.location}
+        plansList={this.state.plans} />}
+
+         {!this.state.isHidden && <UsersPlan />}
+
+          {!this.state.isHidden && <UsersList
+
+            usersList={this.state.users}
+
+        />}
+
+      </div>
+
+
         </main>
       </div>
     );

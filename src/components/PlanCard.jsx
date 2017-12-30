@@ -15,7 +15,7 @@ const PlanCard = (props) => {
       <p>Generic Drugs: {props.generic_drugs} </p>
       <p>Brand Drugs: {props.brand_drugs}</p>
       <p>Concierge Acces: {props.concierge_access} </p>
-      <input type="submit" placeholder="Select this plan!" className="button" />
+
     </div>
   )
 }

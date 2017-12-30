@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 const UsersPlan = () => {
   return (
-    <div className="users-plan">
+    <div className="user-plan">
       <h1>Congratulations! Here is your selected plan:</h1>
       <h1>Halsa Health Bronze Choice 3000: DATA</h1>
       <h3>Price Multiple: DATA</h3>
@@ -24,4 +24,3 @@ const UsersPlan = () => {
 
 
 export default UsersPlan;
-
