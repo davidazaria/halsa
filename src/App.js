@@ -10,6 +10,8 @@ import UsersPlan from './components/UsersPlan';
 import PlanCard from './components/PlanCard';
 import UsersList from './components/UsersList';
 
+import Routes from './components/Routes'
+
 class App extends Component {
   constructor() {
     super();
@@ -104,12 +106,10 @@ class App extends Component {
     return (
       <div className="App">
         <main>
+
           <Header />
-          <button className="button1" onClick={this.showUserForm}>
-            {this.state.isClicked
-              ? <Form />
-              : 'Get your quote!' }
-            </button>
+          <Routes />
+
 
           <div>
         <button onClick={this.toggleHidden.bind(this)} >
@@ -130,6 +130,7 @@ class App extends Component {
         />}
 
       </div>
+
 
 
         </main>
