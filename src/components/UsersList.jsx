@@ -1,23 +1,17 @@
-
 import React from 'react';
 import User from './User';
 
-
-
-
 const UsersList = (props) => {
-    return(
+    return (
       <div className="users-list">
         {props.usersList.map(users => {
           return (
             <User
-
               username={users.username}
               plan_id={users.plan_id}
               age={users.age}
               income={users.income}
               zip={users.zip}
-
               />
           );
         })}

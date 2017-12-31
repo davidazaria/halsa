@@ -5,8 +5,8 @@ import UsersPlan from './UsersPlan'
 
 //  Here is the the form component where users enter demographics
 class Form extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       plans: null,
       username: null,

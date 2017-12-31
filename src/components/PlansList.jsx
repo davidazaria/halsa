@@ -7,7 +7,7 @@ import PlanCard from './PlanCard'
 const PlansList = (props) => {
   return (
     <div className="plans-list">
-      {props.plansList.map((plans) => {
+      {props.plansList.map(plans => {
         return (
           <PlanCard
             age={props.age}

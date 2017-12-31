@@ -6,7 +6,6 @@ import PlansList from './components/PlansList';
 import Header from './components/Header';
 import { Switch, Route } from 'react-router-dom';
 import UsersPlan from './components/UsersPlan';
-// import SelectedPlan from './components/SelectedPlan.jsx';
 import PlanCard from './components/PlanCard';
 import UsersList from './components/UsersList';
 
@@ -24,13 +23,16 @@ class App extends Component {
     };
     this.usersSubmit = this.usersSubmit.bind(this);
     this.showUserForm = this.showUserForm.bind(this);
+    this.getAllPlans = this.getAllPlans.bind(this);
+    this.getAllUsers = this.getAllUsers.bind(this);
 
   }
-    toggleHidden () {
-    this.setState({
-      isHidden: !this.state.isHidden
-    })
-  }
+
+  //   toggleHidden () {
+  //   this.setState({
+  //     isHidden: !this.state.isHidden
+  //   })
+  // }
 
   componentDidMount() {
     this.getAllPlans();
@@ -107,6 +109,8 @@ class App extends Component {
           {this.state.isClicked
             ? <Form usersSubmit={this.usersSubmit} />
             : <button className="button" onClick={this.showUserForm}>Get a quote!</button>}
+          <UsersPlan />
+          <UsersList usersList={this.state.users} />
         </main>
       </div>
     );
