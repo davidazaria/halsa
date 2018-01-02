@@ -9,7 +9,7 @@ import UsersPlan from './components/UsersPlan';
 import PlanCard from './components/PlanCard';
 import UsersList from './components/UsersList';
 
-import Routes from './components/Routes'
+import Routes from './components/Routes';
 
 class App extends Component {
   constructor() {
@@ -27,7 +27,6 @@ class App extends Component {
     this.getAllPlans = this.getAllPlans.bind(this);
     this.getAllUsers = this.getAllUsers.bind(this);
   }
-
 
   componentDidMount() {
     this.getAllPlans();
