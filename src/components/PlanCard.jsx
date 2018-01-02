@@ -1,6 +1,7 @@
 import React from 'react';
 
-
+//  Information is populated by the database
+//  The premium is multiplied by the user's gae, from the input
 const PlanCard = (props) => {
   return (
     <div className="plan">
@@ -15,7 +16,7 @@ const PlanCard = (props) => {
       <p>Generic Drugs: {props.generic_drugs} </p>
       <p>Brand Drugs: {props.brand_drugs}</p>
       <p>Concierge Acces: {props.concierge_access} </p>
-
+      <button type="submit" className="button" onClick={props.addPlan}>Select this plan!</button>
     </div>
   )
 }
