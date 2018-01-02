@@ -27,11 +27,7 @@ class App extends Component {
     this.getAllPlans = this.getAllPlans.bind(this);
     this.getAllUsers = this.getAllUsers.bind(this);
   }
-  //   toggleHidden () {
-  //   this.setState({
-  //     isHidden: !this.state.isHidden
-  //   })
-  // }
+
 
   componentDidMount() {
     this.getAllPlans();
@@ -63,6 +59,12 @@ class App extends Component {
   setEditing(id) {
     this.setState({
       currentlyEditing: id,
+    });
+  }
+
+  toggleHidden() {
+    this.setState({
+      isHidden: !this.state.isHidden,
     });
   }
 
@@ -129,9 +131,6 @@ class App extends Component {
         />}
 
       </div>
-
-
-
 
           {this.state.isClicked
             ? <Form usersSubmit={this.usersSubmit} />
