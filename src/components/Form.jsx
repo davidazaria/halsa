@@ -49,8 +49,9 @@ class Form extends Component {
           location: res.data.places[0].state,
         });
         console.log('hi! this is: ' + this.state.location);
-        console.log('Hey dude, you`re this old: ' + this.state.age)
+        console.log('Hey dude, you`re this old: ' + this.state.age);
       });
+      this.props.usersSubmit('POST', event, this.state, this.state.plan_id);
   }
 
   // addPlan - grab ID of the selected plan where button is
@@ -61,10 +62,9 @@ class Form extends Component {
     if (!this.state.plans) {
       return (<div className="Loading">Loading...</div>);
     }
-    if (!this.state.location) {
       return (
         <div className="user-form">
-          <form className="user-form" onSubmit={this.handleSubmit} onSubmit={() => props.usersSubmit('POST', event, this.state, this.state.plan_id)}>
+          <form className="user-form" onSubmit={this.handleSubmit}>
             <div className="userflow1">
               <input
                 type="text"
@@ -75,7 +75,7 @@ class Form extends Component {
             </div>
             <div className="userflow2">
               <input
-                type="text"
+                type="number"
                 name="age"
                 placeholder="age"
                 onChange={this.handleChange}
@@ -112,7 +112,6 @@ class Form extends Component {
     //     <Link to='/PlansList'>Get Quotes!</Link>
     //   </div>
     // );
-  }
 }
 
 export default Form;

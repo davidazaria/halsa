@@ -1,5 +1,5 @@
 import React from 'react';
-import PlanCard from './PlanCard'
+import PlanCard from './PlanCard';
 
 //  Probably need to make this stateful
 //  In state, collect data from plans database: age, priceMultiple, etc...
@@ -24,6 +24,7 @@ const PlansList = (props) => {
             generic_drugs={plans.generic_drugs}
             brand_drugs={plans.brand_drugs}
             concierge_access={plans.concierge_access}
+            planID={plans.id}
           />
         );
       })}

@@ -23,11 +23,11 @@ class UsersDB {
 
   __validate(property, propType) {
     if (propType === 'age') {
+      console.log(propType, property)
       const age = /^\d+$/;
-      if (!property.match(age)) throw new Error('invalid age');
+      // if (!property.match(age)) throw new Error('invalid age');
     }
     if (property) return property;
-    else throw new Error(`Missing property ${propType}`);
   }
 
   __modify(changes) {
@@ -38,7 +38,11 @@ class UsersDB {
   }
 
   static findAll() {
-    return db.manyOrNone('SELECT * FROM users u INNER JOIN plans p ON u.plan_id=p.id ORDER BY u.username ASC');
+    return db.manyOrNone(`
+      SELECT DISTINCT u.id as id, u.plan_id as plan_id, u.username, u.age, u.zip_code, u.income, p.plan_name
+      FROM users u
+      INNER JOIN plans p ON u.plan_id=p.id
+      ORDER BY u.username ASC`);
   }
 
   static findById(id) {
@@ -60,7 +64,7 @@ class UsersDB {
       INSERT INTO users
       (plan_id, username, age, zip_code, income)
       VALUES ($/plan_id/, $/username/, $/age/, $/zip_code/, $/income/)
-      RETRUNING *
+      RETURNING *
         `, this).then(users => this.__modify(users));
   }
 
@@ -75,7 +79,7 @@ class UsersDB {
       zip_code = $/zip_code/,
       income = $/income/
       WHERE id = $/id/
-      RETRUNING *
+      RETURNING *
         `, this).then(users => this.__modify(users));
   }
 }

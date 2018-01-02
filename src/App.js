@@ -65,11 +65,11 @@ class App extends Component {
   toggleHidden() {
     this.setState({
       isHidden: !this.state.isHidden,
-  });
-}
+    });
+  }
 
   deleteUser(id) {
-    axios.get(`http://localhost:3000/api/users/${id}`, {
+    axios.delete(`http://localhost:3000/api/users/${id}`, {
       method: 'DELETE',
     }).then((res) => {
       this.getAllUsers();
@@ -79,9 +79,9 @@ class App extends Component {
 
   usersSubmit(method, event, data, id) {
     event.preventDefault();
-    axios.get(`http://localhost:3000/api/users/${id || ''}`, {
+    axios(`http://localhost:3000/api/users/${id || ''}`, {
       method:
-      'method',
+      method,
       headers: {
         'Content-Type': 'application/json',
       },
@@ -117,10 +117,10 @@ class App extends Component {
                 <Form usersSubmit={this.usersSubmit} />}
               />
           </Switch>
-          {!this.state.users
+          {/*}{!this.state.users
             ? (<div>loading..</div>)
             : (<UsersList deleteUser={this.deleteUser} usersList={this.state.users} />)
-          }
+          }*/}
         </main>
       </div>
     );
