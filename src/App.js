@@ -64,9 +64,15 @@ class App extends Component {
 
   toggleHidden() {
     this.setState({
+<<<<<<< HEAD
       isHidden: !this.state.isHidden
   })
 }
+=======
+      isHidden: !this.state.isHidden,
+    });
+  }
+>>>>>>> 4c3d050da6002db5dcc239d12447cdbf9582b632
 
   deleteUser(id) {
     axios.get(`http://localhost:3000/api/users/${id}`, {
@@ -113,6 +119,7 @@ class App extends Component {
             <Route path="/Form" component={Form}/>
           </Switch>
           <div>
+<<<<<<< HEAD
             <button onClick={this.toggleHidden.bind(this)}>check!</button>
             {!this.state.isHidden && <PlansList
               age={this.state.age}
@@ -122,6 +129,27 @@ class App extends Component {
             }
             {!this.state.isHidden && <UsersPlan />}
           </div>
+=======
+        <button onClick={this.toggleHidden.bind(this)} >
+          check!
+        </button>
+
+        {!this.state.isHidden && <PlansList
+        age={this.state.age}
+        location={this.state.location}
+        plansList={this.state.plans} />}
+
+         {!this.state.isHidden && <UsersPlan />}
+
+          {!this.state.isHidden && <UsersList
+
+            usersList={this.state.users}
+
+        />}
+
+      </div>
+
+>>>>>>> 4c3d050da6002db5dcc239d12447cdbf9582b632
           {this.state.isClicked
             ? <Form usersSubmit={this.usersSubmit} />
             : <button className="button" onClick={this.showUserForm}>Get a quote!</button>}
