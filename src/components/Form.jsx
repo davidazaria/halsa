@@ -14,6 +14,7 @@ class Form extends Component {
       age: null,
       zip_code: null,
       income: null,
+      plan_id: null,
     };
     //  BIND METHODS!
     this.handleChange = this.handleChange.bind(this);
@@ -50,8 +51,8 @@ class Form extends Component {
         console.log('hi! this is: ' + this.state.location);
         console.log('Hey dude, you`re this old: ' + this.state.age)
       });
-    e.props.usersSubmit();
   }
+
   // addPlan - grab ID of the selected plan where button is
   //  POST with User data to users table
   // e.target.value >
@@ -63,7 +64,7 @@ class Form extends Component {
     if (!this.state.location) {
       return (
         <div className="user-form">
-          <form className="user-form" onSubmit={this.handleSubmit}>
+          <form className="user-form" onSubmit={this.handleSubmit} onSubmit={() => props.usersSubmit('POST', event, this.state, this.state.plan_id)}>
             <div className="userflow1">
               <input
                 type="text"

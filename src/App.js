@@ -26,12 +26,12 @@ class App extends Component {
     this.getAllPlans = this.getAllPlans.bind(this);
     this.getAllUsers = this.getAllUsers.bind(this);
     this.toggleHidden = this.toggleHidden.bind(this);
+    this.deleteUser = this.deleteUser.bind(this);
   }
 
   componentDidMount() {
     this.getAllPlans();
     this.getAllUsers();
-    console.log("Hey! I got this thing: ");
   }
 
   getAllPlans() {
@@ -47,7 +47,6 @@ class App extends Component {
   getAllUsers() {
     axios.get('http://localhost:3000/api/users')
       .then((res) => {
-        console.log(res.data.data.users[0].username)
         this.setState({
           users: res.data.data.users,
           apiUserDataLoaded: true,
@@ -75,6 +74,7 @@ class App extends Component {
     }).then((res) => {
       this.getAllUsers();
     });
+    console.log("Hey you deleted me!")
   }
 
   usersSubmit(method, event, data, id) {
@@ -89,6 +89,7 @@ class App extends Component {
     }).then((res) => {
       this.getAllUsers();
     });
+    console.log("Danny what the fuck are you doing")
   }
 
   //  change state if button was clicked
@@ -113,30 +114,13 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route path="/Form"
               render={props =>
-                <Form {...props}
-                  usersSubmit={this.usersSubmit}
-                />}
+                <Form usersSubmit={this.usersSubmit} />}
               />
           </Switch>
-          <div>
-            <button onClick={this.toggleHidden.bind(this)}>check!</button>
-            {!this.state.isHidden && <PlansList
-              age={this.state.age}
-              location={this.state.location}
-              plansList={this.state.plans}
-            />
-            }
-            {!this.state.isHidden && <UsersPlan />}
-          </div>
-        {!this.state.isHidden && <PlansList
-        age={this.state.age}
-        location={this.state.location}
-        plansList={this.state.plans} />}
-
-         {!this.state.isHidden && <UsersPlan />}
-
-          {!this.state.isHidden && <UsersList usersList={this.state.users} />}
-
+          {!this.state.users
+            ? (<div>loading..</div>)
+            : (<UsersList deleteUser={this.deleteUser} usersList={this.state.users} />)
+          }
         </main>
       </div>
     );

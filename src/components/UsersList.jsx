@@ -4,6 +4,7 @@ import User from './User';
 const UsersList = (props) => {
   return (
     <div className="users-list">
+      <h1>Halsa Health Members</h1>
       {props.usersList.map((users, index) => {
         return (
           <User
@@ -13,14 +14,11 @@ const UsersList = (props) => {
             age={users.age}
             income={users.income}
             zip={users.zip_code}
+            id={users.id}
+            deleteUser={props.deleteUser}
           />
-<<<<<<< HEAD
           );
         })}
-=======
-        );
-      })}
->>>>>>> david-more-readme
     </div>
   );
 };
