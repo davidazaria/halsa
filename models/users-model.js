@@ -59,7 +59,7 @@ class UsersDB {
   // the bottom two needs to change to an upsert
 
   //  this should be create
-  save() {
+  create() {
     return db.one(`
       INSERT INTO users
       (plan_id, username, age, zip_code, income)
