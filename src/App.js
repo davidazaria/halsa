@@ -66,9 +66,6 @@ class App extends Component {
     this.setState({
       isHidden: !this.state.isHidden
   })
-}
-      isHidden: !this.state.isHidden,
-    });
   }
 
   deleteUser(id) {
