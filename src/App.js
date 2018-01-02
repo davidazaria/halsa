@@ -117,7 +117,7 @@ class App extends Component {
                 <Form usersSubmit={this.usersSubmit} />}
               />
           </Switch>
-          {/*}{!this.state.users
+          {/*{!this.state.users
             ? (<div>loading..</div>)
             : (<UsersList deleteUser={this.deleteUser} usersList={this.state.users} />)
           }*/}
