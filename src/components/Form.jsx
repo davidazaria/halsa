@@ -50,7 +50,7 @@ class Form extends Component {
         console.log('hi! this is: ' + this.state.location);
         console.log('Hey dude, you`re this old: ' + this.state.age)
       });
-    e.usersSubmit();
+    e.props.usersSubmit();
   }
   // addPlan - grab ID of the selected plan where button is
   //  POST with User data to users table
@@ -101,23 +101,16 @@ class Form extends Component {
               location={this.state.location}
               plansList={this.state.plans}
             />
+            <input type="submit" className="submit" />
           </form>
         </div>
       );
     }
-    return (
-      <div>
-        <Link to='/PlanList'>Get Quotes!</Link>
-      </div>
-
-
-
-
-
-
-
-
-    );
+    // return (
+    //   <div>
+    //     <Link to='/PlansList'>Get Quotes!</Link>
+    //   </div>
+    // );
   }
 }
 

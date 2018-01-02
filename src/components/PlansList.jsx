@@ -24,7 +24,6 @@ const PlansList = (props) => {
             generic_drugs={plans.generic_drugs}
             brand_drugs={plans.brand_drugs}
             concierge_access={plans.concierge_access}
-            addPlan={props.addPlan}
           />
         );
       })}
