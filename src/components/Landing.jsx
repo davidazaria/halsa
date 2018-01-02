@@ -20,6 +20,7 @@ and your family.</p>
 
 <div className="start">
 <Link to='/Form'>Get Started</Link>
+<Link to='/test'>Get Started</Link>
 
 
 </div>

@@ -1,7 +1,29 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Popup from './Popup';
+
+
 import planlogo from '../image/planlogo.png';
-const UsersPlan = () => {
+
+ class test extends Component {
+ 	constructor() {
+ 		super();
+ 		this.state ={
+ 			plans: null,
+ 			apitDataLoaded: false,
+      showPopup: false
+    };
+  }
+  togglePopup() {
+    this.setState({
+      showPopup: !this.state.showPopup
+    });
+  }
+
+
+render(){
+
   return (
     <div className="user-plan">
     <div>
@@ -9,7 +31,7 @@ const UsersPlan = () => {
       </div>
           <div className="section-plan">
       <div className="ribbon">
-         <div className="member">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Congratulations</div>
+     <div className="member">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Congratulations</div>
 
       </div>
       <div className="plan-box">
@@ -29,14 +51,34 @@ const UsersPlan = () => {
       <h3>Generic Drugs:<span> DATA</span> </h3>
       <h3>Brand Drugs:<span> DATA</span></h3>
       <h3>Concierge Acces:<span>Yes</span> </h3>
-</div>
+
 </div>
 
     </div>
+          <div className='popup'>
 
+
+             <div className='popup'>
+
+        <button onClick={this.togglePopup.bind(this)}>Delete</button>
+
+        {this.state.showPopup ?
+          <Popup
+            text='Delete'
+            closePopup={this.togglePopup.bind(this)}
+          />
+          : null
+        }
+      </div>
+
+      </div>
+
+
+
+
+    </div>
   );
 }
+}
 
-
-
-export default UsersPlan;
+export default test;
