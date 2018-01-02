@@ -317,7 +317,12 @@ h3 {
 
 
 .health-plan{
+  padding-top:30px;
+  font-size: 40px;
+  margin-top:-75px;
   color:#a52958;
+  margin-right:70px;
+
 }
 
 
@@ -335,7 +340,7 @@ h3 {
   position: relative;
 display: table;
 width: 1000px;
-height: 708px;
+height: 500px;
 margin: 50px auto 0 auto;
 padding-bottom: 57px;
 background: #F4F4F4;
@@ -391,10 +396,10 @@ text-align:center;
 
 
 background-color: #86db78 ;
--webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
--moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
--ms-box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
-box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+-webkit-box-shadow: 0px 0px 7px rgba(0,0,0,0.5);
+-moz-box-shadow: 0px 0px 7px rgba(0,0,0,0.5);
+-ms-box-shadow: 0px 0px 7px rgba(0,0,0,0.5);
+box-shadow: 0px 0px 7px rgba(0,0,0,0.5);
 -webkit-transform: rotate(45deg) translate3d(0,0,0);
 -moz-transform: rotate(45deg) translate3d(0,0,0);
 -ms-transform: rotate(45deg) translate3d(0,0,0);
@@ -408,10 +413,10 @@ color: white;
 text-transform: uppercase;
    font-size: 1.2em;
    text-align: center;
-  font-family:  cursive;
-   font-size: 30px;
+  /*font-family:  cursive;*/
+   font-size: 25px;
    font-weight: 900;
-      letter-spacing: .05em;
+      letter-spacing: .01em;
       text-shadow: .3px .3px green;
 }
 
@@ -443,7 +448,7 @@ padding-bottom: 25px;
 }
 
 span {
-   color:#A9A9A9;
+   color:#0074D9;
     text-transform: uppercase;
     letter-spacing: .7em;
     font-size:18px;
@@ -573,8 +578,8 @@ animation-iteration-count:1;
 
   left: 50%;
   transform: translate(-50%, -50%);
-    margin-top: 200px;
-    margin-bottom:-200px;
+    margin-top: 190px;
+    margin-bottom:-340px;
     font-size: 21px;
     text-align: center;
 
@@ -604,9 +609,9 @@ to {top:1px; opacity: 3}
 }
 
 .plan-box h3{
-
+ left:10%;
   position: relative;
-  color:#A9A9A9;
+  color:#787878 ;
 
     letter-spacing: .1em;
     font-size:30px;
@@ -620,10 +625,24 @@ to {top:1px; opacity: 3}
 .plan-box {
 
   padding:15px;
-/*  border:solid 5px grey;*/
+
 
 }
 
+.planlogo{
+  position: relative;
+  margin-top:15px;
+  margin-bottom:15px;
+ margin-right: 850px;
 
+}
 
+.enroll {
+  color:black;
+  font-size: 30px;
+  font-weight:900;
+    text-transform: uppercase;
+/*  font-family: 'Contrail One', cursive;*/
+/*  font-family: 'Francois One', sans-serif;*/
+}
 
