@@ -48,10 +48,10 @@ class Form extends Component {
         this.setState({
           location: res.data.places[0].state,
         });
-        console.log('hi! this is: ' + this.state.location);
-        console.log('Hey dude, you`re this old: ' + this.state.age);
+        console.log(`hi! this is: ${this.state.location}`);
+        console.log(`hey dude, you are this old: ${this.state.age}`);
       });
-      this.props.usersSubmit('POST', event, this.state, this.state.plan_id);
+    this.props.usersSubmit('POST', e, this.state, this.state.plan_id);
   }
 
   // addPlan - grab ID of the selected plan where button is
@@ -62,51 +62,51 @@ class Form extends Component {
     if (!this.state.plans) {
       return (<div className="Loading">Loading...</div>);
     }
-      return (
-        <div className="user-form">
-          <form className="user-form" onSubmit={this.handleSubmit}>
-            <div className="userflow1">
-              <input
-                type="text"
-                name="username"
-                placeholder="name"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="userflow2">
-              <input
-                type="number"
-                name="age"
-                placeholder="age"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="userflow3">
-              <input
-                type="text"
-                name="zip_code"
-                placeholder="zip"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="userflow4">
-              <input
-                type="text"
-                name="income"
-                placeholder="income"
-                onChange={this.handleChange}
-              />
-            </div>
-            <PlansList
-              age={this.state.age}
-              location={this.state.location}
-              plansList={this.state.plans}
+    return (
+      <div className="user-form">
+        <form className="user-form" onSubmit={this.handleSubmit}>
+          <div className="userflow1">
+            <input
+              type="text"
+              name="username"
+              placeholder="name"
+              onChange={this.handleChange}
             />
-            <input type="submit" className="submit" />
-          </form>
-        </div>
-      );
-    }
+          </div>
+          <div className="userflow2">
+            <input
+              type="number"
+              name="age"
+              placeholder="age"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="userflow3">
+            <input
+              type="text"
+              name="zip_code"
+              placeholder="zip"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="userflow4">
+            <input
+              type="text"
+              name="income"
+              placeholder="income"
+              onChange={this.handleChange}
+            />
+          </div>
+          <PlansList
+            age={this.state.age}
+            location={this.state.location}
+            plansList={this.state.plans}
+          />
+          <input type="submit" className="submit" />
+        </form>
+      </div>
+    );
+  }
     // return (
     //   <div>
     //     <Link to='/PlansList'>Get Quotes!</Link>
