@@ -1,6 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import planlogo from '../image/planlogo.png';
+
+
+
+
+
+
 const UsersPlan = () => {
   return (
     <div className="user-plan">
@@ -9,7 +15,7 @@ const UsersPlan = () => {
       </div>
           <div className="section-plan">
       <div className="ribbon">
-        // <div className="member">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Congratulations</div>
+        // <div className="member">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Congratulations</div>
 
       </div>
       <div className="plan-box">

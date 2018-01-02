@@ -27,11 +27,11 @@ class App extends Component {
     this.getAllPlans = this.getAllPlans.bind(this);
     this.getAllUsers = this.getAllUsers.bind(this);
   }
-  //   toggleHidden () {
-  //   this.setState({
-  //     isHidden: !this.state.isHidden
-  //   })
-  // }
+    toggleHidden () {
+    this.setState({
+      isHidden: !this.state.isHidden
+    })
+  }
 
   componentDidMount() {
     this.getAllPlans();
