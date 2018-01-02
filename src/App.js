@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
 import axios from 'axios';
+import './App.css';
 import Form from './components/Form';
 import PlansList from './components/PlansList';
 import Header from './components/Header';
@@ -19,15 +19,12 @@ class App extends Component {
       apiPlanDataLoaded: false,
       shouldShowUserForm: false,
       isHidden: true,
-
     };
     this.usersSubmit = this.usersSubmit.bind(this);
     this.showUserForm = this.showUserForm.bind(this);
     this.getAllPlans = this.getAllPlans.bind(this);
     this.getAllUsers = this.getAllUsers.bind(this);
-
   }
-
   //   toggleHidden () {
   //   this.setState({
   //     isHidden: !this.state.isHidden
@@ -92,7 +89,7 @@ class App extends Component {
   //  change state if button was clicked
   showUserForm() {
     this.setState(prevState => ({
-      isClicked: true
+      isClicked: true,
     }));
   }
 
