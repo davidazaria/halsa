@@ -30,7 +30,7 @@ class App extends Component {
   componentDidMount() {
     this.getAllPlans();
     this.getAllUsers();
-    console.log("Hey! I got this thing: ")
+    console.log("Hey! I got this thing: ");
   }
 
   getAllPlans() {
@@ -64,9 +64,9 @@ class App extends Component {
 
   toggleHidden() {
     this.setState({
-      isHidden: !this.state.isHidden
-  })
-  }
+      isHidden: !this.state.isHidden,
+  });
+}
 
   deleteUser(id) {
     axios.get(`http://localhost:3000/api/users/${id}`, {
@@ -134,14 +134,6 @@ class App extends Component {
          {!this.state.isHidden && <UsersPlan />}
 
           {!this.state.isHidden && <UsersList usersList={this.state.users} />}
-          {this.state.isClicked
-            ? <Form usersSubmit={this.usersSubmit} />
-            : <button className="button" onClick={this.showUserForm}>Get a quote!</button>}
-          <UsersPlan />/
-          {this.state.users
-            ? <UsersList usersList={this.state.users} />
-            : <div>Loading...</div>
-          }
 
         </main>
       </div>

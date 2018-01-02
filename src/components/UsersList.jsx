@@ -14,8 +14,13 @@ const UsersList = (props) => {
             income={users.income}
             zip={users.zip_code}
           />
+<<<<<<< HEAD
           );
         })}
+=======
+        );
+      })}
+>>>>>>> david-more-readme
     </div>
   );
 };
