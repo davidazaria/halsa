@@ -74,7 +74,7 @@ class App extends Component {
     }).then((res) => {
       this.getAllUsers();
     });
-    console.log("Hey you deleted me!")
+    console.log("Hey you deleted me!");
   }
 
   usersSubmit(method, event, data, id) {
@@ -89,7 +89,7 @@ class App extends Component {
     }).then((res) => {
       this.getAllUsers();
     });
-    console.log("Danny what the fuck are you doing")
+    console.log('This is the usersSubmit console.log');
   }
 
   //  change state if button was clicked
