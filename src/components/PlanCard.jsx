@@ -6,6 +6,7 @@ const PlanCard = (props) => {
   return (
     <div className="plan">
       <h2 className="planName">{props.plan_name} {props.location}</h2>
+      <p hidden>{props.id}</p>
       <p>Premium per month: {props.price_multiple * props.age}</p>
       <p>In-Network Deductable: {props.in_network_deductible}</p>
       <p>Out-Of-Network Deductable: {props.out_of_network_deductible} </p>

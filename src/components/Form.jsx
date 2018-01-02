@@ -50,7 +50,11 @@ class Form extends Component {
         console.log('hi! this is: ' + this.state.location);
         console.log('Hey dude, you`re this old: ' + this.state.age)
       });
+    e.usersSubmit();
   }
+  // addPlan - grab ID of the selected plan where button is
+  //  POST with User data to users table
+  // e.target.value >
 
   render() {
     if (!this.state.plans) {
@@ -92,9 +96,10 @@ class Form extends Component {
                 onChange={this.handleChange}
               />
             </div>
-            <input
-              type="submit"
-              name="submit"
+            <PlansList
+              age={this.state.age}
+              location={this.state.location}
+              plansList={this.state.plans}
             />
           </form>
         </div>
@@ -102,11 +107,6 @@ class Form extends Component {
     }
     return (
       <div>
-        <PlansList
-          age={this.state.age}
-          location={this.state.location}
-          plansList={this.state.plans}
-        />
         <Link to='/PlanList'>Get Quotes!</Link>
       </div>
 
