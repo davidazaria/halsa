@@ -9,11 +9,13 @@ const UsersList = (props) => {
             <User
               key={index}
               username={users.username}
-              plan_id={users.plan_id}
+              plan_name={users.plan_name}
               age={users.age}
               income={users.income}
-              zip={users.zip}
-              />
+
+              zip={users.zip_code}
+
+ />
           );
         })}
       </div>

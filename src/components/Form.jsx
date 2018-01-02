@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PlansList from './PlansList';
 import axios from 'axios';
-import UsersPlan from './UsersPlan'
+import UsersPlan from './UsersPlan';
+import { Link } from 'react-router-dom';
 
 //  Here is the the form component where users enter demographics
 class Form extends Component {
@@ -106,7 +107,16 @@ class Form extends Component {
           location={this.state.location}
           plansList={this.state.plans}
         />
+        <Link to='/PlanList'>Get Quotes!</Link>
       </div>
+
+
+
+
+
+
+
+
     );
   }
 }

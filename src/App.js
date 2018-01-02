@@ -9,6 +9,8 @@ import UsersPlan from './components/UsersPlan';
 import PlanCard from './components/PlanCard';
 import UsersList from './components/UsersList';
 
+import Routes from './components/Routes'
+
 class App extends Component {
   constructor() {
     super();
@@ -102,12 +104,41 @@ class App extends Component {
     return (
       <div className="App">
         <main>
+
           <Header />
+
+          <Routes />
+
+
+          <div>
+        <button onClick={this.toggleHidden.bind(this)} >
+          check!
+        </button>
+
+        {!this.state.isHidden && <PlansList
+        age={this.state.age}
+        location={this.state.location}
+        plansList={this.state.plans} />}
+
+         {!this.state.isHidden && <UsersPlan />}
+
+          {!this.state.isHidden && <UsersList
+
+            usersList={this.state.users}
+
+        />}
+
+      </div>
+
+
+
+
           {this.state.isClicked
             ? <Form usersSubmit={this.usersSubmit} />
             : <button className="button" onClick={this.showUserForm}>Get a quote!</button>}
           <UsersPlan />
           <UsersList usersList={this.state.users} />
+
         </main>
       </div>
     );

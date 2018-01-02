@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import halsalogo from '../image/halsalogo2.png';
 
-export default class Header extends Component {
+ class Header extends Component {
   render() {
     return (
       <div className="row">
@@ -12,3 +12,6 @@ export default class Header extends Component {
     );
   }
 }
+
+
+export default Header
