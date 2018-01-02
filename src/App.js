@@ -8,8 +8,7 @@ import { Switch, Route } from 'react-router-dom';
 import UsersPlan from './components/UsersPlan';
 import PlanCard from './components/PlanCard';
 import UsersList from './components/UsersList';
-
-import Routes from './components/Routes'
+import Landing from './components/Landing';
 
 class App extends Component {
   constructor() {
@@ -27,15 +26,11 @@ class App extends Component {
     this.getAllPlans = this.getAllPlans.bind(this);
     this.getAllUsers = this.getAllUsers.bind(this);
   }
-  //   toggleHidden () {
-  //   this.setState({
-  //     isHidden: !this.state.isHidden
-  //   })
-  // }
 
   componentDidMount() {
     this.getAllPlans();
     this.getAllUsers();
+    console.log("Hey! I got this thing: ")
   }
 
   getAllPlans() {
@@ -51,6 +46,7 @@ class App extends Component {
   getAllUsers() {
     axios.get('http://localhost:3000/api/users')
       .then((res) => {
+        console.log(res.data.data.users[0].username)
         this.setState({
           users: res.data.data.users,
           apiUserDataLoaded: true,
@@ -65,6 +61,12 @@ class App extends Component {
       currentlyEditing: id,
     });
   }
+
+  toggleHidden() {
+    this.setState({
+      isHidden: !this.state.isHidden
+  })
+}
 
   deleteUser(id) {
     axios.get(`http://localhost:3000/api/users/${id}`, {
@@ -98,50 +100,41 @@ class App extends Component {
   //  user must click button to render form
 
   render() {
+    console.log(this.state.users, 'users');
     if (!this.state.plans) {
       return (<p className="Loading">Loading...</p>);
     }
     return (
       <div className="App">
         <main>
-
           <Header />
-
-          <Routes />
-
-
+          <Switch>
+            {/*<Route exact path="/" component={Landing}/>*/}
+            <Route path="/Form" component={Form}/>
+          </Switch>
           <div>
-        <button onClick={this.toggleHidden.bind(this)} >
-          check!
-        </button>
-
-        {!this.state.isHidden && <PlansList
-        age={this.state.age}
-        location={this.state.location}
-        plansList={this.state.plans} />}
-
-         {!this.state.isHidden && <UsersPlan />}
-
-          {!this.state.isHidden && <UsersList
-
-            usersList={this.state.users}
-
-        />}
-
-      </div>
-
-
-
-
+            <button onClick={this.toggleHidden.bind(this)}>check!</button>
+            {!this.state.isHidden && <PlansList
+              age={this.state.age}
+              location={this.state.location}
+              plansList={this.state.plans}
+            />
+            }
+            {!this.state.isHidden && <UsersPlan />}
+          </div>
           {this.state.isClicked
             ? <Form usersSubmit={this.usersSubmit} />
             : <button className="button" onClick={this.showUserForm}>Get a quote!</button>}
-          <UsersPlan />
-          <UsersList usersList={this.state.users} />
+          <UsersPlan />/
+          {this.state.users
+            ? <UsersList usersList={this.state.users} />
+            : <div>Loading...</div>
+          }
 
         </main>
       </div>
     );
   }
 }
+
 export default App;

@@ -12,10 +12,8 @@ const UsersList = (props) => {
               plan_name={users.plan_name}
               age={users.age}
               income={users.income}
-
               zip={users.zip_code}
-
- />
+            />
           );
         })}
       </div>
