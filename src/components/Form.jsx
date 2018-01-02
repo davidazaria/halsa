@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import PlansList from './PlansList';
 import axios from 'axios';
+import PlansList from './PlansList';
 import UsersPlan from './UsersPlan';
 import { Link } from 'react-router-dom';
 
@@ -26,7 +26,7 @@ class Form extends Component {
         this.setState({
           plans: res.data.data.plans,
         });
-        console.log('App is running!')
+        console.log('App is running!');
       }).catch(err => console.log(err));
   }
 
