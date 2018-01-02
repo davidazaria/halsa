@@ -3,7 +3,13 @@
 
 ## What is Halsa Health?
 
-Who hasn't had to deal with the archaicly cumbersome and cumersomely archaic health insurance process in the last decade? Chances are you have had to purchase individual health insurance privately or via a state/federal marketplace, or have gone through the open enrollment process at your employer. Likely you've walked away thinking of ways to improve the 
+Who hasn't had to deal with the archaicly cumbersome and cumbersomely archaic health insurance process in the last decade? And if you did, the chances are pretty, pretty high you walked away from the experience with a profound sense of disappointment, yearning for a better user experience (http://bit.ly/2p1essU). 
+
+Well, have no fear: Halsa Health is here! And by here we mean presently exploring and continuously integrating on a nifty, common sense JavaScript-powered solution for health insurance buyers new and advanced.
+
+Building on the experience offered by tech-backed health insurers and marketplace platforms built by private organizations, we wanted to capitalize on the notion purchasing health insurance should be a simple experience, stripping away any barriers to insure yourself and your family. 
+
+In this MVP for what we envision could be a full-fledged, React-powered solution, we 
 
 ## Our wireframe
 
@@ -21,20 +27,19 @@ Project plan can be found in this project repo under the `Projects` tab.
 
 ## Technologies used
 
-* 3rd party API call
-* Axios (npm package for API calls)
+* 3rd party API Zippopotam.US
+* Axios
 * Body-Parser
 * Command Line
 * Debug 
 * Dotenv
-* EJS 
 * ESLint 
 * Express
 * Github
 * Heroku
-* HTML/CSS
+* HTML/CSS/JSX
 * JavaScript
-* Morgan Logger
+* Morgan
 * MVC architecture
 * Node.JS
 * Nodemon
@@ -42,6 +47,10 @@ Project plan can be found in this project repo under the `Projects` tab.
 * pg-promise
 * Postgres/SQL
 * Postman
+* React 
+* React-DOM
+* React Router
+* Webpack
 
 ## Phases to completion
 
