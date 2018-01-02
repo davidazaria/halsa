@@ -25,6 +25,7 @@ class App extends Component {
     this.showUserForm = this.showUserForm.bind(this);
     this.getAllPlans = this.getAllPlans.bind(this);
     this.getAllUsers = this.getAllUsers.bind(this);
+    this.toggleHidden = this.toggleHidden.bind(this);
   }
 
   componentDidMount() {
@@ -109,8 +110,13 @@ class App extends Component {
         <main>
           <Header />
           <Switch>
-            {/*<Route exact path="/" component={Landing}/>*/}
-            <Route path="/Form" component={Form}/>
+            <Route exact path="/" component={Landing} />
+            <Route path="/Form"
+              render={props =>
+                <Form {...props}
+                  usersSubmit={this.usersSubmit}
+                />}
+              />
           </Switch>
           <div>
             <button onClick={this.toggleHidden.bind(this)}>check!</button>
@@ -122,10 +128,6 @@ class App extends Component {
             }
             {!this.state.isHidden && <UsersPlan />}
           </div>
-        <button onClick={this.toggleHidden.bind(this)} >
-          check!
-        </button>
-
         {!this.state.isHidden && <PlansList
         age={this.state.age}
         location={this.state.location}
@@ -134,14 +136,6 @@ class App extends Component {
          {!this.state.isHidden && <UsersPlan />}
 
           {!this.state.isHidden && <UsersList usersList={this.state.users} />}
-          {this.state.isClicked
-            ? <Form usersSubmit={this.usersSubmit} />
-            : <button className="button" onClick={this.showUserForm}>Get a quote!</button>}
-          <UsersPlan />/
-          {this.state.users
-            ? <UsersList usersList={this.state.users} />
-            : <div>Loading...</div>
-          }
 
         </main>
       </div>
