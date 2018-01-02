@@ -48,7 +48,7 @@ class Form extends Component {
           location: res.data.places[0].state,
         });
         console.log('hi! this is: ' + this.state.location);
-        console.log('Hey dude, you`re this old: ' + this.state.age)
+        console.log('Hey dude, you`re this old: ' + this.state.age);
       });
     e.props.usersSubmit();
   }

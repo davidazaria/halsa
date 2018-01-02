@@ -1,5 +1,5 @@
 import React from 'react';
-import PlanCard from './PlanCard'
+import PlanCard from './PlanCard';
 
 //  Probably need to make this stateful
 //  In state, collect data from plans database: age, priceMultiple, etc...

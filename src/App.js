@@ -47,7 +47,7 @@ class App extends Component {
   getAllUsers() {
     axios.get('http://localhost:3000/api/users')
       .then((res) => {
-        console.log(res.data.data.users[0].username)
+        console.log(res.data.data.users[0].username);
         this.setState({
           users: res.data.data.users,
           apiUserDataLoaded: true,
@@ -66,8 +66,8 @@ class App extends Component {
   toggleHidden() {
     this.setState({
       isHidden: !this.state.isHidden,
-  });
-}
+    });
+  }
 
   deleteUser(id) {
     axios.get(`http://localhost:3000/api/users/${id}`, {
