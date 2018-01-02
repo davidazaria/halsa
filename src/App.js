@@ -85,7 +85,7 @@ class App extends Component {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data),
+      data: data,
     }).then((res) => {
       this.getAllUsers();
     });
