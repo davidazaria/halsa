@@ -64,15 +64,12 @@ class App extends Component {
 
   toggleHidden() {
     this.setState({
-<<<<<<< HEAD
       isHidden: !this.state.isHidden
   })
 }
-=======
       isHidden: !this.state.isHidden,
     });
   }
->>>>>>> 4c3d050da6002db5dcc239d12447cdbf9582b632
 
   deleteUser(id) {
     axios.get(`http://localhost:3000/api/users/${id}`, {
