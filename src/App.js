@@ -28,6 +28,12 @@ class App extends Component {
     this.toggleHidden = this.toggleHidden.bind(this);
     this.deleteUser = this.deleteUser.bind(this);
   }
+    toggleHidden () {
+    this.setState({
+      isHidden: !this.state.isHidden
+    })
+  }
+
 
   componentDidMount() {
     this.getAllPlans();
@@ -112,7 +118,11 @@ class App extends Component {
             <Route path="/Form"
               render={props =>
                 <Form usersSubmit={this.usersSubmit} />}
+
               />
+             <Route path="/UsersPlan" component={UsersPlan} />
+        <Route path="/UsersList" component={UsersList} />
+
           </Switch>
           {/*{!this.state.users
             ? (<div>loading..</div>)

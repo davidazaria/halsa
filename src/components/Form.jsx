@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, browserHistory } from 'react';
 import axios from 'axios';
 import PlansList from './PlansList';
 import UsersPlan from './UsersPlan';
 import { Link } from 'react-router-dom';
 
-//  Here is the the form component where users enter their demographic information
+
+//  Here is the the form component where users enter demographics
+
 class Form extends Component {
   constructor(props) {
     super(props);
@@ -19,6 +21,7 @@ class Form extends Component {
     //  Binding our methods below
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    // this.getPlan = this.getPlan.bind(this);
   }
 
   //  At the time the form component loads, we want to have available to us our API list of plans.
@@ -51,9 +54,23 @@ class Form extends Component {
         });
       });
     this.props.usersSubmit('POST', e, this.state, this.state.id);
+
   }
 
-  // addPlan - grab ID of the selected plan where button is
+
+showPlan(){
+    this.setState({
+      showPlan: !this.state.showPlan
+    });
+
+
+
+   handleClick = () => {
+        browserHistory.push('/UsersPlan');
+    };
+}
+
+  // \\addPlan - grab ID of the selected plan where button is
   //  POST with User data to users table
   // e.target.value >
 
@@ -105,21 +122,28 @@ class Form extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <PlansList
+          <Link to='/UsersPlan'>
+           <input type="submit" className="submit" />
+          </Link>
+        </form>
+        <div className="plans-container">
+        </div>
+
+           <PlansList
             age={this.state.age}
             location={this.state.location}
             plansList={this.state.plans}
           />
-          <input type="submit" className="submit" />
-        </form>
-      </div>
-    );
-  }
-    // return (
-    //   <div>
-    //     <Link to='/PlansList'>Get Quotes!</Link>
-    //   </div>
-    // );
+
+
+
+ </div>
+
+
+)
+
+}
+
 }
 
 export default Form;

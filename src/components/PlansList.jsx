@@ -1,11 +1,14 @@
 import React from 'react';
 import PlanCard from './PlanCard';
+import UsersPlan from'./UsersPlan';
 
+import { Link } from 'react-router-dom'
 //  Probably need to make this stateful
 //  In state, collect data from plans database: age, priceMultiple, etc...
 
 const PlansList = (props) => {
   return (
+   <div className="plans-container">
     <div className="plans-list">
       {props.plansList.map(plan => {
         return (
@@ -28,6 +31,7 @@ const PlansList = (props) => {
           />
         );
       })}
+      </div>
     </div>
   );
 };
