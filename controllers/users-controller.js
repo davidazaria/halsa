@@ -2,6 +2,7 @@ const UsersDB = require('../models/users-model');
 
 const usersController = {};
 
+// Below are our different controllers for the User CRUD experience
 usersController.index = (req, res, next) => {
   UsersDB.findAll()
     .then((users) => {
