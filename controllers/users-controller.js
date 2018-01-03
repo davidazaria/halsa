@@ -25,7 +25,8 @@ usersController.show = (req, res, next) => {
 };
 
 usersController.create = (req, res, next) => {
-  UsersDB.create({
+  req.body.age = parseInt(req.body.age, 10);
+  new UsersDB({
     username:
     req.body.username,
     age:
@@ -36,17 +37,18 @@ usersController.create = (req, res, next) => {
     req.body.plan_id,
     income:
     req.body.income,
-  }, req.user.id).then((user) => {
-    res.json({
-      message: 'User added successfully!',
-      data:
-      { user },
-    });
-  }).catch(next);
+  }).create()
+    .then((user) => {
+      res.json({
+        message: 'User added successfully!',
+        data:
+        { user },
+      });
+    }).catch(next);
 };
 
 usersController.update = (req, res, next) => {
-  UsersDB.update({
+  new UsersDB({
     username:
     req.body.username,
     age:

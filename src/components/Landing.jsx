@@ -14,12 +14,12 @@ import { Link } from 'react-router-dom'
  <div className="sign-up">
 
  <p className="enroll">Open enrollment is here. Get covered.</p>
-<p>Sign up to get health insurance for you,
-and your family.</p>
+<p>Sign up to get health insurance for you.</p>
  </div>
 
 <div className="start">
 <Link to='/Form'>Get Started</Link>
+
 
 
 </div>

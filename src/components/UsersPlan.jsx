@@ -1,29 +1,67 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Popup from './Popup';
+
+import
 import planlogo from '../image/planlogo.png';
 
+<<<<<<< HEAD
 
 
 
 
 
 const UsersPlan = () => {
+=======
+ class UsersPlan extends Component {
+  constructor() {
+    super();
+    this.state ={
+      plans: null,
+      apitDataLoaded: false,
+      showPopup: false
+    };
+  }
+  showPopup() {
+    this.setState({
+      showPopup: !this.state.showPopup
+    });
+  }
+
+showPlan(){
+
+
+   this.setState(prevState => ({
+      isClicked: true,
+    }));
+  }
+
+
+render(){
+
+>>>>>>> yanina-css-work
   return (
+
     <div className="user-plan">
     <div>
-      <h1 className="congrats">Here is your selected plan!</h1>
+      <h1 className="congrats">Congratulations!</h1>
       </div>
           <div className="section-plan">
       <div className="ribbon">
+<<<<<<< HEAD
         // <div className="member">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Congratulations</div>
+=======
+     <div className="member">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Selected Plan</div>
+>>>>>>> yanina-css-work
 
       </div>
       <div className="plan-box">
        <div className="planlogo">
-          <img src={planlogo} width="60" height="60" />
+          <img src={planlogo} width="70" height="70" />
         </div>
       <h1 className ="health-plan">Halsa Health Bronze Choice 3000</h1>
-      <h3>Price Multiple:<span> DATA</span></h3>
+      <h3>Price Multiple:<span> </span></h3>
       <h3>In-Network Deductable:<span> DATA</span></h3>
       <h3>Out-Of-Network Deductable: <span>DATA</span> </h3>
       <h3>Maximum Out of Pocket:<span> DATA</span></h3>
@@ -35,14 +73,29 @@ const UsersPlan = () => {
       <h3>Generic Drugs:<span> DATA</span> </h3>
       <h3>Brand Drugs:<span> DATA</span></h3>
       <h3>Concierge Acces:<span>Yes</span> </h3>
-</div>
-</div>
 
-    </div>
+      <button className= "btn" onClick={this.showPopup.bind(this)}>Change Plan</button>
+         <Link className= "btn" to='/UsersList'>Halsa Users</Link>
+         </div>
+         </div>
+
+{this.state.showPopup ?
+          <Popup
+            text='Delete'
+            closePopup={this.showPopup.bind(this)}
+          />
+          : null
+        }
+
+ </div>
+
+
+
+
+
 
   );
 }
-
-
+}
 
 export default UsersPlan;
