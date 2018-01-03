@@ -17,12 +17,12 @@ const config = {
 
 };
 
-function setDatabase() {
-  return (
-    pgp(process.env.DATABASE_URL || config)
-  );
-}
+// function setDatabase() {
+//   return (
+//     pgp(process.env.DATABASE_URL || config)
+//   );
+// }
 
-const db = setDatabase();
+// const db = setDatabase();
 
-module.exports = db;
+module.exports = pgp(process.env.DATABASE_URL || config)
