@@ -30,7 +30,7 @@ import axios from 'axios';
     }
 
     getAllUsers() {
-      axios.get('http://localhost:3000/api/users')
+      axios.get('/api/users')
         .then((res) => {
           this.setState({
             users: res.data.data.users,

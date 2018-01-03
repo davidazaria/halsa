@@ -41,7 +41,7 @@ class App extends Component {
   }
 
   getAllPlans() {
-    axios.get('http://localhost:3000/api/plans')
+    axios.get('/api/plans')
       .then((res) => {
         this.setState({
           plans: res.data.data.plans,
@@ -85,7 +85,7 @@ class App extends Component {
 
   usersSubmit(method, event, data, id) {
     event.preventDefault();
-    axios(`http://localhost:3000/api/users/${id || ''}`, {
+    axios(`/api/users/${id || ''}`, {
       method:
       method,
       headers: {
