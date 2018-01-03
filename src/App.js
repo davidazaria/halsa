@@ -29,14 +29,6 @@ class App extends Component {
     this.getAllUsers = this.getAllUsers.bind(this);
     this.deleteUser = this.deleteUser.bind(this);
   }
-<<<<<<< HEAD
-    toggleHidden () {
-    this.setState({
-      isHidden: !this.state.isHidden
-    })
-  }
-=======
->>>>>>> yanina-css-work
 
   componentDidMount() {
     this.getAllPlans();

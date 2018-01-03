@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Popup from './Popup';
 
-import
+// import
 import planlogo from '../image/planlogo.png';
 
 
