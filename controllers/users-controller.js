@@ -2,6 +2,7 @@ const UsersDB = require('../models/users-model');
 
 const usersController = {};
 
+// Below are our different controllers for the User CRUD experience
 usersController.index = (req, res, next) => {
   UsersDB.findAll()
     .then((users) => {
@@ -13,6 +14,7 @@ usersController.index = (req, res, next) => {
     }).catch(next);
 };
 
+//  Find All
 usersController.show = (req, res, next) => {
   UsersDB.findById(req.params.id)
     .then((user) => {
@@ -24,6 +26,7 @@ usersController.show = (req, res, next) => {
     }).catch(next);
 };
 
+//  Create new user
 usersController.create = (req, res, next) => {
   req.body.age = parseInt(req.body.age, 10);
   new UsersDB({
@@ -47,6 +50,7 @@ usersController.create = (req, res, next) => {
     }).catch(next);
 };
 
+// Update user -- which is currently out of commmission
 usersController.update = (req, res, next) => {
   new UsersDB({
     username:
@@ -68,6 +72,7 @@ usersController.update = (req, res, next) => {
   }).catch(next);
 };
 
+//  Delete a user
 usersController.delete = (req, res, next) => {
   UsersDB.destroy(req.params.id)
     .then(() => {
