@@ -1,4 +1,4 @@
-\c halsa_health
+
 
 DROP TABLE IF EXISTS plans;
 

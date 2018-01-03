@@ -1,4 +1,4 @@
-\c halsa_health
+
 
 INSERT INTO users (plan_id, username, age,
 zip_code, income) VALUES
