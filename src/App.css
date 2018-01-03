@@ -75,6 +75,17 @@ input{
     animation-delay: 1.2s;
 }
 
+.userflow5{
+   position: absolute;
+   margin-top: 460px;
+   padding-left: 359px;
+   left: -1000px;
+   -webkit-animation: slide 0.5s forwards;
+    -webkit-animation-delay: .2s;
+    animation: slide 0.5s forwards;
+    animation-delay: 1.6s;
+}
+
 
 
 @-webkit-keyframes slide {
@@ -645,4 +656,3 @@ to {top:1px; opacity: 3}
 /*  font-family: 'Contrail One', cursive;*/
 /*  font-family: 'Francois One', sans-serif;*/
 }
-

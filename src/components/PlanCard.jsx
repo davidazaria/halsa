@@ -6,7 +6,6 @@ const PlanCard = (props) => {
   return (
     <div className="plan">
       <h2 className="planName">{props.plan_name} {props.location}</h2>
-      <p hidden>{props.id}</p>
       <p>Premium per month: {props.price_multiple * props.age}</p>
       <p>In-Network Deductable: {props.in_network_deductible}</p>
       <p>Out-Of-Network Deductable: {props.out_of_network_deductible} </p>
@@ -17,8 +16,7 @@ const PlanCard = (props) => {
       <p>Generic Drugs: {props.generic_drugs} </p>
       <p>Brand Drugs: {props.brand_drugs}</p>
       <p>Concierge Acces: {props.concierge_access} </p>
-      <label><input type="checkbox" value={props.id} className="checkbox" />Select this plan!</label>
-
+      <p>Plan ID: {props.id} </p>
     </div>
   )
 }

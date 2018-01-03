@@ -48,7 +48,7 @@ usersController.create = (req, res, next) => {
 };
 
 usersController.update = (req, res, next) => {
-  UsersDB.update({
+  new UsersDB({
     username:
     req.body.username,
     age:

@@ -51,7 +51,7 @@ class Form extends Component {
         console.log(`hi! this is: ${this.state.location}`);
         console.log(`hey dude, you are this old: ${this.state.age}`);
       });
-    this.props.usersSubmit('POST', e, this.state, this.state.plan_id);
+    this.props.usersSubmit('POST', e, this.state, this.state.id);
   }
 
   // addPlan - grab ID of the selected plan where button is
@@ -94,6 +94,14 @@ class Form extends Component {
               type="text"
               name="income"
               placeholder="income"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="userflow5">
+            <input
+              type="text"
+              name="plan_id"
+              placeholder="Enter plan ID here"
               onChange={this.handleChange}
             />
           </div>
