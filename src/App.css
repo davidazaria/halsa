@@ -24,7 +24,7 @@ input{
     width: 400px;
     font-size: 35px;
   border-style: none;
-
+  margin-bottom:700px;
 
 }
 
@@ -81,6 +81,17 @@ input{
     -webkit-animation-delay: .2s;
     animation: slide 0.5s forwards;
     animation-delay: 1.2s;
+}
+
+.userflow5{
+   position: absolute;
+   margin-top: 460px;
+   padding-left: 359px;
+   left: -1000px;
+   -webkit-animation: slide 0.5s forwards;
+    -webkit-animation-delay: .2s;
+    animation: slide 0.5s forwards;
+    animation-delay: 1.6s;
 }
 
 
@@ -194,7 +205,7 @@ to {top:200px; opacity: 1}
 
 
 
-button[type="submit"]{
+/*button[type="submit"]{
     color:#ff6961;
 
     position: fixed;
@@ -214,13 +225,13 @@ button[type="submit"]{
     animation: slide-up-fade-in ease 2s;
     animation-iteration-count: 2;
     transform-origin: 50% 50%;
-    animation-fill-mode:forwards; /*when the spec is finished*/
+    animation-fill-mode:forwards; when the spec is finished
     -webkit-animation: slide-up-fade-in ease 2s;
     -webkit-animation-iteration-count: 1;
     -webkit-transform-origin: 50% 50%;
     -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/
 
-}
+/*}
 
 
 @keyframes slide-up-fade-in{
@@ -239,9 +250,9 @@ button[type="submit"]{
 
 button[type="submit"]:hover {
   color: ; /* red */
-  letter-spacing: 3px;
-  background: #ffffff;
-}
+/*  letter-spacing: 3px;
+  background: #ffffff;*/
+
 h3 {
     color: black;
     font-size: 20px;
@@ -268,7 +279,11 @@ h3 {
 }
 
 .plans-container{
-   margin-top:500px;
+  display:inline-block;
+        padding:6px;
+        border-width:0px;
+
+   margin-top:300px;
    position:relative;
 }
 
@@ -344,8 +359,8 @@ h3 {
 .section-plan {
   position: relative;
 display: table;
-width: 1000px;
-height: 500px;
+width: 990px;
+height: 480px;
 margin: 50px auto 0 auto;
 padding-bottom: 57px;
 background: #F4F4F4;
@@ -363,8 +378,11 @@ box-shadow: 0px 0px 4px rgba(0,0,0,0.3);
 
 .congrats{
   position:relative;
-  color:black;
+  font-size: 50px;
+  color:white;
   top-margin:300px;
+  letter-spacing: .03em;
+
 
 }
 .userbox{
@@ -492,10 +510,10 @@ span {
 
     color:#ff6961;
     position: relative;
-    font-size:25px;
+    font-size:23px;
     top: 300px;
-    width:275px;
-    left: 35%;
+    width:240px;
+    left: 39%;
 
     border: 3px solid #ff6961;
      text-decoration: none;
@@ -505,7 +523,7 @@ span {
   padding: .7em 1em;
   margin: 2em 2em;
 
-  border-radius: 30px;
+  border-radius: 25px;
     animation: slide-up-fade-in ease 5s;
     animation-iteration-count: 1;
     transform-origin: 50% 50%;
@@ -532,7 +550,7 @@ span {
 
 .start:hover {
   color: ; /* red */
-  letter-spacing: 3px;
+  letter-spacing: 2.5px;
   background: #ffffff;
 }
 
@@ -653,6 +671,7 @@ to {top:1px; opacity: 3}
 /*  font-family: 'Francois One', sans-serif;*/
 }
 
+
 .popup {
   position: fixed;
   width: 100%;
@@ -665,10 +684,11 @@ to {top:1px; opacity: 3}
 
 }
 .popup_inner {
+  top-padding:20px;
   position: absolute;
   font-size:30px;
-  left: 20%;
-  right: 20%;
+  left: 30%;
+  right: 30%;
   top: 30%;
   bottom: 40%;
   margin: auto;
@@ -678,7 +698,7 @@ to {top:1px; opacity: 3}
     background: #FFF;
   color: #666;
   font: 25px 'Quicksand', sans-serif;
-  top-padding:80px;
+  top-padding:130px;
   text-align: center;
   box-shadow: 0px 0px 4px rgba(0,0,0,0.9);
   border-radius:.1em;
@@ -686,6 +706,18 @@ to {top:1px; opacity: 3}
 .edit-plan{
 position:relative;
 margin-left:100px;
+ display: inline-block;
+    margin: 5px;
+   background: rgba(71, 186, 255, 0.8);
+    color: white;
+    font-size: 1.1em;
+
+
+    border-radius: 1px;
+    padding: 7px 30px;
+    -moz-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
 
 }
 
@@ -695,12 +727,12 @@ margin-left:100px;
     margin: 5px;
    background: rgba(71, 186, 255, 0.8);
     color: white;
-    font-size: 1.0em;
+    font-size: .9em;
 
 
     border-radius: 1px;
     padding: 7px 30px;
-    -moz-transition: all 0.2s;
+   -moz-transition: all 0.2s;
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
 }
@@ -710,14 +742,17 @@ margin-left:100px;
 }
 
 #b1 {
-  background: rgba(83, 83, 83, 0.8);
+  background:#FF8D87;
 }
-
+#b1:hover {
+    background: #666;
+    color: #c1e1e0;
+}
 
 .pop-container{
 
 
-    position:absolute;
+position:absolute;
     top:0;
     left:0;
     bottom:0;
@@ -733,14 +768,54 @@ margin-left:100px;
 
 .user-plan{
   position:relative;
-  margin-top:100px;
-  margin-bottom:250px;
+  margin-top:85px;
+  margin-bottom:150px;
 
 
 }
 
+.submit{
+  margin-top:75px;
+  margin-right:300px;
+  float:right;
+  color:grey;
+  letter-spacing: .4px;
+  width:250px;
+}
+
+.submit:hover {
+
+  letter-spacing: 3px;
+  background: #ffffff;
+}
+
+.button-wrap{
+  position:relative;
+  margin-left:900px;
+  margin-top:650px;
 
 
+}
 
+.btn {
+  position:relative;
+  float: right;
+  width: 172px;
+   margin: 5px;
+   background: rgba(71, 186, 255, 0.8);
+    color: white;
+    font-size: 1.1em;
+
+    margin-right: 10px;
+    border-radius: .3em;
+    padding: 7px 30px;
+    border:none;
+
+}
+
+
+.btn link{
+  font-size:15px;
+}
 
 

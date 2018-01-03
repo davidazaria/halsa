@@ -15,16 +15,25 @@ import planlogo from '../image/planlogo.png';
       showPopup: false
     };
   }
-  togglePopup() {
+  showPopup() {
     this.setState({
       showPopup: !this.state.showPopup
     });
+  }
+
+showPlan(){
+
+
+   this.setState(prevState => ({
+      isClicked: true,
+    }));
   }
 
 
 render(){
 
   return (
+
     <div className="user-plan">
     <div>
       <h1 className="congrats">Congratulations!</h1>
@@ -36,10 +45,10 @@ render(){
       </div>
       <div className="plan-box">
        <div className="planlogo">
-          <img src={planlogo} width="65" height="65" />
+          <img src={planlogo} width="70" height="70" />
         </div>
       <h1 className ="health-plan">Halsa Health Bronze Choice 3000</h1>
-      <h3>Price Multiple:<span> DATA</span></h3>
+      <h3>Price Multiple:<span> </span></h3>
       <h3>In-Network Deductable:<span> DATA</span></h3>
       <h3>Out-Of-Network Deductable: <span>DATA</span> </h3>
       <h3>Maximum Out of Pocket:<span> DATA</span></h3>
@@ -52,33 +61,31 @@ render(){
       <h3>Brand Drugs:<span> DATA</span></h3>
       <h3>Concierge Acces:<span>Yes</span> </h3>
 
-</div>
+      <button className= "btn" onClick={this.showPopup.bind(this)}>Change Plan</button>
+         <Link className= "btn" to='/UsersList'>Halsa Users</Link>
+         </div>
+         </div>
 
-    </div>
-          <div className='popup'>
 
 
-             <div className='popup'>
 
-        <button onClick={this.togglePopup.bind(this)}>Change Plan</button>
 
-        {this.state.showPopup ?
+
+ {this.state.showPopup ?
           <Popup
             text='Delete'
-            closePopup={this.togglePopup.bind(this)}
+            closePopup={this.showPopup.bind(this)}
           />
           : null
         }
-      </div>
-      <div className="edit-plan">
-      <Link to='/Form'>Change Plan</Link>
-      </div>
-      </div>
+
+ </div>
 
 
 
 
-    </div>
+
+
   );
 }
 }

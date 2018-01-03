@@ -85,7 +85,7 @@ class App extends Component {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data),
+      data: data,
     }).then((res) => {
       this.getAllUsers();
     });
@@ -117,11 +117,11 @@ class App extends Component {
                 <Form usersSubmit={this.usersSubmit} />}
 
               />
-
-
+             <Route path="/UsersPlan" component={UsersPlan} />
+        <Route path="/UsersList" component={UsersList} />
 
           </Switch>
-          {/*}{!this.state.users
+          {/*{!this.state.users
             ? (<div>loading..</div>)
             : (<UsersList deleteUser={this.deleteUser} usersList={this.state.users} />)
           }*/}

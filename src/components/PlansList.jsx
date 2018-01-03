@@ -1,5 +1,6 @@
 import React from 'react';
 import PlanCard from './PlanCard';
+import UsersPlan from'./UsersPlan';
 
 import { Link } from 'react-router-dom'
 //  Probably need to make this stateful
@@ -9,24 +10,24 @@ const PlansList = (props) => {
   return (
    <div className="plans-container">
     <div className="plans-list">
-      {props.plansList.map(plans => {
+      {props.plansList.map(plan => {
         return (
           <PlanCard
             age={props.age}
             location={props.location}
-            key={plans.id}
-            plan_name={plans.plan_name}
-            price_multiple={plans.price_multiple}
-            in_network_deductible={plans.in_network_deductible}
-            out_of_network_deductible={plans.out_of_network_deductible}
-            maximum_out_of_pocket={plans.maximum_out_of_pocket}
-            primary_care_copay={plans.primary_care_copay}
-            specialist_copay={plans.specialist_copay}
-            urgent_care_copay={plans.urgent_care_copay}
-            generic_drugs={plans.generic_drugs}
-            brand_drugs={plans.brand_drugs}
-            concierge_access={plans.concierge_access}
-            planID={plans.id}
+            key={plan.id}
+            plan_name={plan.plan_name}
+            price_multiple={plan.price_multiple}
+            in_network_deductible={plan.in_network_deductible}
+            out_of_network_deductible={plan.out_of_network_deductible}
+            maximum_out_of_pocket={plan.maximum_out_of_pocket}
+            primary_care_copay={plan.primary_care_copay}
+            specialist_copay={plan.specialist_copay}
+            urgent_care_copay={plan.urgent_care_copay}
+            generic_drugs={plan.generic_drugs}
+            brand_drugs={plan.brand_drugs}
+            concierge_access={plan.concierge_access}
+            id={plan.id}
           />
         );
       })}
