@@ -25,12 +25,13 @@ class App extends Component {
     this.showUserForm = this.showUserForm.bind(this);
     this.getAllPlans = this.getAllPlans.bind(this);
     this.getAllUsers = this.getAllUsers.bind(this);
+    this.toggleHidden = this.toggleHidden.bind(this);
+    this.deleteUser = this.deleteUser.bind(this);
   }
 
   componentDidMount() {
     this.getAllPlans();
     this.getAllUsers();
-    console.log("Hey! I got this thing: ")
   }
 
   getAllPlans() {
@@ -46,7 +47,6 @@ class App extends Component {
   getAllUsers() {
     axios.get('http://localhost:3000/api/users')
       .then((res) => {
-        console.log(res.data.data.users[0].username)
         this.setState({
           users: res.data.data.users,
           apiUserDataLoaded: true,
@@ -64,27 +64,24 @@ class App extends Component {
 
   toggleHidden() {
     this.setState({
-
-
-
       isHidden: !this.state.isHidden,
     });
   }
 
-
   deleteUser(id) {
-    axios.get(`http://localhost:3000/api/users/${id}`, {
+    axios.delete(`http://localhost:3000/api/users/${id}`, {
       method: 'DELETE',
     }).then((res) => {
       this.getAllUsers();
     });
+    console.log("Hey you deleted me!");
   }
 
   usersSubmit(method, event, data, id) {
     event.preventDefault();
-    axios.get(`http://localhost:3000/api/users/${id || ''}`, {
+    axios(`http://localhost:3000/api/users/${id || ''}`, {
       method:
-      'method',
+      method,
       headers: {
         'Content-Type': 'application/json',
       },
@@ -92,6 +89,7 @@ class App extends Component {
     }).then((res) => {
       this.getAllUsers();
     });
+    console.log('This is the usersSubmit console.log');
   }
 
   //  change state if button was clicked
@@ -111,58 +109,22 @@ class App extends Component {
     return (
       <div className="App">
         <main>
-
           <Header />
-              <Switch>
-      <Route exact path='/' component={Landing}/>
+          <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route path="/Form"
+              render={props =>
+                <Form usersSubmit={this.usersSubmit} />}
 
-       <Route exact path='/Form' component={Form}/>
-
-      <Route exact path='/UsersPlan' component={UsersPlan}/>
-
-
-
-
-
-    </Switch>
-          <div>
-
-            <button onClick={this.toggleHidden.bind(this)}>check!</button>
-            {!this.state.isHidden && <PlansList
-              age={this.state.age}
-              location={this.state.location}
-              plansList={this.state.plans}
-            />
-            }
-            {!this.state.isHidden && <UsersPlan />}
-          </div>
-
-        <button onClick={this.toggleHidden.bind(this)} >
-          check!
-        </button>
-
-        {!this.state.isHidden && <PlansList
-        age={this.state.age}
-        location={this.state.location}
-        plansList={this.state.plans} />}
-
-         {!this.state.isHidden && <UsersPlan />}
-
-          {!this.state.isHidden && <UsersList
-
-            usersList={this.state.users}
-
-        />}
+              />
 
 
 
-
-          {this.state.isClicked
-            ? <Form usersSubmit={this.usersSubmit} />
-            : <button className="button" onClick={this.showUserForm}>Get a quote!</button>}
-
-
-
+          </Switch>
+          {/*}{!this.state.users
+            ? (<div>loading..</div>)
+            : (<UsersList deleteUser={this.deleteUser} usersList={this.state.users} />)
+          }*/}
         </main>
       </div>
     );

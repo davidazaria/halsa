@@ -1,5 +1,5 @@
 import React from 'react';
-import PlanCard from './PlanCard'
+import PlanCard from './PlanCard';
 
 import { Link } from 'react-router-dom'
 //  Probably need to make this stateful
@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 
 const PlansList = (props) => {
   return (
+   <div className="plans-container">
     <div className="plans-list">
       {props.plansList.map(plans => {
         return (
@@ -25,10 +26,11 @@ const PlansList = (props) => {
             generic_drugs={plans.generic_drugs}
             brand_drugs={plans.brand_drugs}
             concierge_access={plans.concierge_access}
-            addPlan={props.addPlan}
+            planID={plans.id}
           />
         );
       })}
+      </div>
     </div>
   );
 };

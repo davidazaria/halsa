@@ -17,8 +17,9 @@ const PlanCard = (props) => {
       <p>Generic Drugs: {props.generic_drugs} </p>
       <p>Brand Drugs: {props.brand_drugs}</p>
       <p>Concierge Acces: {props.concierge_access} </p>
-      <button type="submit" className="button" onClick={props.addPlan}>Select this plan!</button>
-    <Link to='/test'>Get Started</Link>
+
+      <label><input type="checkbox" value={props.id} className="checkbox" />Select this plan!</label>
+
 
     </div>
   )

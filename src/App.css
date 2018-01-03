@@ -3,6 +3,7 @@ html {
 }
 
 * {
+
     box-sizing: border-box;
   }
   body {
@@ -29,8 +30,15 @@ input{
 
 
 .userform{
+
+  margin-top:-300px;
+
+   position:fixed;
   color:white;
   font-size: 75px;
+  margin-bottom:500px;
+
+
 }
 
 .userflow1{
@@ -113,7 +121,7 @@ input{
   }
 
 .button1 {
-
+ margin-top:500px;
   margin-right: 50px;
   position: absolute;
   border: 3px solid white;
@@ -125,7 +133,7 @@ input{
   text-align: center;
   color:black;
   margin-right: 50px;
-  position: relative;
+
   border: 3px solid white;
   border-radius: 19px;
   font-size:40px;
@@ -134,17 +142,9 @@ input{
 
   text-align: center;
 
-   transition: all 0.65s;
-  bottom: 5%;
-   right: -1000px;
-  -webkit-animation: slide-in 0.7s forwards;
-    -webkit-animation-delay: .1s;
-    animation: slide-in .7s forwards;
-    animation-delay: 1.7s;
 
-}
-@-webkit-keyframes slide-in {
-    100% { right: 0px; }
+
+
 }
 
 
@@ -256,6 +256,7 @@ h3 {
 }
 
 .selected-plan{
+
   font-size:300px ;
   position:relative;
   border: solid 20px white;
@@ -266,19 +267,22 @@ h3 {
 
 }
 
-
-.app {
-  background-color: white;
+.plans-container{
+   margin-top:500px;
+   position:relative;
 }
+
+
+
 
 .plansList{
   border:solid  15px black;
-  position: relative;
+
     max-width: 80vw;
-  display: flex;
-  flex-wrap: wrap;
+
   justify-content: space-between;
-  padding: 5px 0;
+
+
 
 
 }
@@ -286,6 +290,7 @@ h3 {
   position: relative;
   left:15%;
       font-size:15px;
+
    width:500px;
    border: solid white ;
    border-radius:1em;
