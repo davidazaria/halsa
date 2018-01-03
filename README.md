@@ -19,6 +19,8 @@ Wireframes can be found in this project repo in the wireframe folder, with files
 
 Project plan can be found in this project repo under the `Projects` tab. There you will find user stories we have allocated to different team members, with columns for `Bugs` and `Won't Do's` given time-constraints to delivery. 
 
+https://git.generalassemb.ly/Halsa/project-3/projects
+
 ## Our initial thoughts on app structure
 
 At first, our thoughts were centered on the experience Oscar offers its customers:
