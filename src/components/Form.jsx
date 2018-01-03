@@ -48,8 +48,6 @@ class Form extends Component {
         this.setState({
           location: res.data.places[0].state,
         });
-        console.log(`hi! this is: ${this.state.location}`);
-        console.log(`hey dude, you are this old: ${this.state.age}`);
       });
     this.props.usersSubmit('POST', e, this.state, this.state.id);
   }
