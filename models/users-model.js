@@ -23,7 +23,6 @@ class UsersDB {
 
   __validate(property, propType) {
     if (propType === 'age') {
-      console.log(propType, property);
       const age = /^\d+$/;
       // if (!property.match(age)) throw new Error('invalid age');
     }

@@ -6,14 +6,7 @@ import Popup from './Popup';
 import
 import planlogo from '../image/planlogo.png';
 
-<<<<<<< HEAD
 
-
-
-
-
-const UsersPlan = () => {
-=======
  class UsersPlan extends Component {
   constructor() {
     super();
@@ -40,7 +33,6 @@ showPlan(){
 
 render(){
 
->>>>>>> yanina-css-work
   return (
 
     <div className="user-plan">
@@ -49,11 +41,8 @@ render(){
       </div>
           <div className="section-plan">
       <div className="ribbon">
-<<<<<<< HEAD
-        // <div className="member">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Congratulations</div>
-=======
+
      <div className="member">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Selected Plan</div>
->>>>>>> yanina-css-work
 
       </div>
       <div className="plan-box">

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 
 //  Here is the the form component where users enter demographics
+
 class Form extends Component {
   constructor(props) {
     super(props);
@@ -17,12 +18,13 @@ class Form extends Component {
       income: null,
       plan_id: null,
     };
-    //  BIND METHODS!
+    //  Binding our methods below
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     // this.getPlan = this.getPlan.bind(this);
   }
 
+  //  At the time the form component loads, we want to have available to us our API list of plans.
   componentDidMount() {
     axios.get('http://localhost:3000/api/plans')
       .then((res) => {
@@ -50,8 +52,6 @@ class Form extends Component {
         this.setState({
           location: res.data.places[0].state,
         });
-        console.log(`hi! this is: ${this.state.location}`);
-        console.log(`hey dude, you are this old: ${this.state.age}`);
       });
     this.props.usersSubmit('POST', e, this.state, this.state.id);
 
@@ -75,6 +75,7 @@ showPlan(){
   //  POST with User data to users table
   // e.target.value >
 
+  // Our render below are compartmentalized divs to handle the different elements of the user-entry form
   render() {
     if (!this.state.plans) {
       return (<div className="Loading">Loading...</div>);

@@ -100,14 +100,11 @@ class App extends Component {
     console.log('This is the usersSubmit console.log');
   }
 
-  //  change state if button was clicked
   showUserForm() {
     this.setState(prevState => ({
       isClicked: true,
     }));
   }
-
-  //  user must click button to render form
 
   render() {
     console.log(this.state.users, 'users');
