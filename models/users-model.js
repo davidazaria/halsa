@@ -1,5 +1,6 @@
 const db = require('../config/dbConfig');
 
+//  Below are our initialized constructor state for creating a new User
 class UsersDB {
   constructor(users) {
     this.id = users.id || null;
@@ -21,6 +22,7 @@ class UsersDB {
     this.concierge_access = this.__validate(users.concierge_access, 'concierge_access');
   }
 
+  //  The below regex was intended to check against faulty ages (numbers) from being entered
   __validate(property, propType) {
     if (propType === 'age') {
       const age = /^\d+$/;
