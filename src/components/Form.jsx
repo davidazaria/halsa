@@ -21,6 +21,7 @@ class Form extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  //  At the time the form component loads, we want to have available to us our API list of plans.
   componentDidMount() {
     axios.get('http://localhost:3000/api/plans')
       .then((res) => {
@@ -58,8 +59,7 @@ class Form extends Component {
   //  POST with User data to users table
   // e.target.value >
 
-
-// Our render below are compartmentalized divs to handle the different elements of the user-entry form
+  // Our render below are compartmentalized divs to handle the different elements of the user-entry form
   render() {
     if (!this.state.plans) {
       return (<div className="Loading">Loading...</div>);
