@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Popup from './Popup';
 
-
+import
 import planlogo from '../image/planlogo.png';
 
  class UsersPlan extends Component {
@@ -66,12 +66,7 @@ render(){
          </div>
          </div>
 
-
-
-
-
-
- {this.state.showPopup ?
+{this.state.showPopup ?
           <Popup
             text='Delete'
             closePopup={this.showPopup.bind(this)}
