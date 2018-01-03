@@ -51,7 +51,7 @@ class App extends Component {
   }
 
   getAllUsers() {
-    axios.get('http://localhost:3000/api/users')
+    axios.get('/api/users')
       .then((res) => {
         this.setState({
           users: res.data.data.users,
@@ -75,7 +75,7 @@ class App extends Component {
   }
 
   deleteUser(id) {
-    axios.delete(`http://localhost:3000/api/users/${id}`, {
+    axios.delete(`/api/users/${id}`, {
       method: 'DELETE',
     }).then((res) => {
       this.getAllUsers();

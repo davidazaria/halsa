@@ -26,7 +26,7 @@ class Form extends Component {
 
   //  At the time the form component loads, we want to have available to us our API list of plans.
   componentDidMount() {
-    axios.get('http://localhost:3000/api/plans')
+    axios.get('/api/plans')
       .then((res) => {
         this.setState({
           plans: res.data.data.plans,
