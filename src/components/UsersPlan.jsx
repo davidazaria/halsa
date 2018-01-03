@@ -9,7 +9,7 @@ const UsersPlan = () => {
       </div>
           <div className="section-plan">
       <div className="ribbon">
-        // <div className="member">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Congratulations</div>
+         <div className="member">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Congratulations</div>
 
       </div>
       <div className="plan-box">
