@@ -123,7 +123,7 @@ class App extends Component {
             <Route
               path="/UsersList"
               render={props =>
-                <UsersList {...props} deleteUser={this.deleteUser} usersList={this.state.users} />}
+                <UsersList {...props} setEditing={this.state.setEditing} deleteUser={this.deleteUser} usersList={this.state.users} />}
             />
           </Switch>
           {/* {!this.state.users

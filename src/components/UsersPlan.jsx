@@ -64,12 +64,12 @@ class UsersPlan extends Component {
             <h1 className="health-plan">Halsa Health Bronze Choice 3000</h1>
             <h3>Price Multiple:<span>PRICE</span></h3>
             <h3>In-Network Deductable:<span>{this.state.in_network_deductible}</span></h3>
-            <h3>Out-Of-Network Deductable: <span>{this.state.out_of_network_deductible}</span> </h3>
+            <h3>Out-Of-Network Deductable: <span>{this.state.out_of_network_deductible}</span></h3>
             <h3>Maximum Out of Pocket:<span>{this.state.maximum_out_of_pocket}</span></h3>
             <h3>Primary Care Co-Pay: <span>{this.state.primary_care_copay}</span></h3>
             <h3>Specialist Co-Pay:<span>{this.state.specialist_copay}</span></h3>
             <h3>Urgent Care Co-Pay:{this.state.urgent_care_copay}</h3>
-            <h3>Generic Drugs:<span>{this.state.generic_drugs}</span> </h3>
+            <h3>Generic Drugs:<span>{this.state.generic_drugs}</span></h3>
             <h3>Brand Drugs:<span>{this.state.brand_drugs}</span></h3>
             <h3>Concierge Acces:<span>{this.state.concierge_access}</span> </h3>
             <button className="btn" onClick={this.showPopup}>Change Plan</button>

@@ -17,6 +17,7 @@ const UsersList = (props) => {
             zip={user.zip_code}
             id={user.id}
             deleteUser={props.deleteUser}
+            setEditing={props.setEditing}
           />
 
           );

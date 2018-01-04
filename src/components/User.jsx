@@ -18,6 +18,7 @@ const User = (props) => {
             <p className="user-details"><span>Zip </span>{props.zip}</p>
             <div className="edit-button">
               <button onClick={() => props.deleteUser(props.id)}>DELETE USER</button>
+              <button onClick={() => props.setEditing()}>EDIT USER</button>
             </div>
           </div>
         </div>
