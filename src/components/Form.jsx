@@ -128,15 +128,11 @@ showPlan(){
         </form>
         <div className="plans-container">
         </div>
-
            <PlansList
             age={this.state.age}
             location={this.state.location}
             plansList={this.state.plans}
           />
-
-
-
  </div>
 
 

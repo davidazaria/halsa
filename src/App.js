@@ -110,19 +110,26 @@ class App extends Component {
           <Header />
           <Switch>
             <Route exact path="/" component={Landing} />
-            <Route path="/Form"
+            <Route
+              path="/Form"
               render={props =>
-                <Form usersSubmit={this.usersSubmit} />}
-
-              />
-             <Route path="/UsersPlan" component={UsersPlan} />
-        <Route path="/UsersList" component={UsersList} />
-
+                <Form {...props} usersSubmit={this.usersSubmit} />}
+            />
+            <Route
+              path="/UsersPlan"
+              render={props =>
+                <UsersPlan {...props} plans={this.state.plans} users={this.state.users} />}
+            />
+            <Route
+              path="/UsersList"
+              render={props =>
+                <UsersList {...props} deleteUser={this.deleteUser} usersList={this.state.users} />}
+            />
           </Switch>
-          {/*{!this.state.users
+          {/* {!this.state.users
             ? (<div>loading..</div>)
             : (<UsersList deleteUser={this.deleteUser} usersList={this.state.users} />)
-          }*/}
+          } */}
         </main>
       </div>
     );

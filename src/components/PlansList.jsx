@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom'
 const PlansList = (props) => {
   return (
    <div className="plans-container">
-    <div className="plans-list">
-      {props.plansList.map(plan => {
+     <div className="plans-list">
+       {props.plansList.map((plan) => {
         return (
           <PlanCard
             age={props.age}
@@ -31,7 +31,7 @@ const PlansList = (props) => {
           />
         );
       })}
-      </div>
+    </div>
     </div>
   );
 };
