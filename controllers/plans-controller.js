@@ -2,6 +2,7 @@ const plansDB = require('../models/plans-model');
 
 const plansController = {};
 
+//  Plans are only viewed entirely or as a singular plan
 plansController.index = (req, res, next) => {
   plansDB.findAll()
     .then((plans) => {

@@ -10,6 +10,7 @@ import PlanCard from './components/PlanCard';
 import UsersList from './components/UsersList';
 import Landing from './components/Landing';
 
+//  We decided to split our apiUserData and apiPlanData to better separate our concerns for the constructor states; reducing the risk of getting a singular apiLoaded boolean for two calls.
 class App extends Component {
   constructor() {
     super();
@@ -21,17 +22,12 @@ class App extends Component {
       shouldShowUserForm: false,
       isHidden: true,
     };
+    //  Here we are binding our methods -- per standard!
     this.usersSubmit = this.usersSubmit.bind(this);
     this.showUserForm = this.showUserForm.bind(this);
     this.getAllPlans = this.getAllPlans.bind(this);
     this.getAllUsers = this.getAllUsers.bind(this);
-    this.toggleHidden = this.toggleHidden.bind(this);
     this.deleteUser = this.deleteUser.bind(this);
-  }
-    toggleHidden () {
-    this.setState({
-      isHidden: !this.state.isHidden
-    })
   }
 
 
@@ -40,6 +36,7 @@ class App extends Component {
     this.getAllUsers();
   }
 
+  //  This is the individual API route for our plans API
   getAllPlans() {
     axios.get('/api/plans')
       .then((res) => {
@@ -50,6 +47,7 @@ class App extends Component {
       }).catch(err => console.log(err));
   }
 
+  //  This is the individual API route for our users API
   getAllUsers() {
     axios.get('/api/users')
       .then((res) => {
@@ -62,27 +60,24 @@ class App extends Component {
       }).catch(err => console.log(err));
   }
 
+  //  This was not yet used, but would be in the future User Edit functionality
   setEditing(id) {
     this.setState({
       currentlyEditing: id,
     });
   }
 
-  toggleHidden() {
-    this.setState({
-      isHidden: !this.state.isHidden,
-    });
-  }
-
+  //  We only introduced a Delete functionality for Users in this iteration
   deleteUser(id) {
     axios.delete(`/api/users/${id}`, {
       method: 'DELETE',
     }).then((res) => {
       this.getAllUsers();
     });
-    console.log("Hey you deleted me!");
+    console.log('Hey you deleted me!');
   }
 
+  //  Likewise for Users -- our plans were already created, and we were only creating Users on the fly
   usersSubmit(method, event, data, id) {
     event.preventDefault();
     axios(`/api/users/${id || ''}`, {

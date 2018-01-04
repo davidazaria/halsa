@@ -1,4 +1,4 @@
-\c halsa_health
+
 
 INSERT INTO plans (plan_name, price_multiple, in_network_deductible,
 out_of_network_deductible, maximum_out_of_pocket, primary_care_copay,
